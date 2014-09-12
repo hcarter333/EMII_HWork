@@ -1,0 +1,288 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Notes 2014/08/15}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+%\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+%\maketitle % title page is now complete
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+\centerline{\bf EMII Notes 2014/08/15}
+\bigskip
+
+Summary:  The one that took four days.  A detector that worked finally arrived for the experiment, so work on EM II has been somewhat slower.  Also, the example here uses a lot of material from prior examples and requires being on your toes.  This example is all about showing that a rather abstruse looking rotation matrix is in fact a rotation matrix.  It involves recognizing dot and cross products when they're written in tensor index notation and having rock solid index skills.  At the end of the day though, it's pretty cool, but it still seems like there should be an even simpler way to do this than the one shown here.
+
+The game is to show that the following is a rotation matrix in that when multiplied by its transpose, the result is the identity matrix:\\
+$M_{ij} = \delta_{ij}cos \alpha + n_i n_j \left(1 - cos \alpha\right) + \epsilon_{ijk}n_k sin \alpha$
+\\\\
+Keep in mind that $n_i$ is defined to be a unit vector.  The transpose relation that we're supposed to show can be written down as $M_{ij}M_{ik} = \delta_{jk}$\\
+
+
+Multiplying the matrix by itself will resullt in 9 terms.  We can make two of them go away identically and two others subtract from each other to disappear.\\\\
+
+We'll make one change to the index just for clarities sake and rename $M_{ik}$ to $M_{il}$, and when referring to the k component in the $M_{il}$ matrix, it will be called m.
+
+The nine terms are\\
+1\\
+$\delta_{ij}\delta_{il}cos^2\alpha = \delta_{jl}cos^2\alpha$\\
+For this term, keep in mind that you're really summing three 3x3 matrices.  Only the $j=l$ terms survive, but they survive in three different locations in index space: 1, 1; 2, 2; and 3, 3.\\\\
+2\\
+$\delta_{il}n_in_j cos\alpha\left(1-cos\alpha\right)$\\
+$= n_ln_j cos\alpha\left(1 - cos\alpha\right)$\\
+The trick here was to absorb the $\delta_{il}$ into the $n_i$, changing the index of $n_i$ to $n_l$ in the process.\\\\
+3\\
+$\delta_{il}\epsilon_{ijk}n_k sin\alpha cos\alpha$\\
+$=\epsilon_{ljk}n_k\space sin\alpha\space cos\alpha$\\
+The trick hin this first step was to apply the $\delta$ to the $\epsilon$ and switch the appropriate index name as above.  There's one more trick that can be played and we'll see it when we gget to the 7th term.  For now, suffice it to say tht this term is going to go away in the end.\\\\
+4\\
+$\delta_{ij} n_i n_l cos\alpha\left(1 - cos\alpha\right)$\\
+First, keep in mind that we're still multiplying the $il$ terms times the $ij$ terms, they're just written out of order above.  We can play the same game we played in term number two to get a final answer of \\
+$n_j n_l cos\alpha \left(1 - cos\alpha\right)$\\
+These two terms, 2 and 4 are the same, so we just wind up with 2 teims term 2.\\\\
+
+5\\
+$n_in_ln_in_j\left(1 - cos\alpha\right)^2$\\
+$= n_l n_i \left(1 - cos\alpha\right)^2$\\
+The trick here is to group the two $n_i$ terms next to each other and grecognize that group as teh dot product of two unit vectors.  Since they're unit vectors, the dot product evaluates to one.\\\\
+6\\
+$n_n n_l \epsilon_{ijk} n_k sin\alpha \left(1 - cos\alpha\right)$
+$= 0$\\
+The trick here is to spot the cross product of two unit vectors.  Since the unit vector is of course identical to itself, it is also parallel to itself, so the cross product, $\epsilon_{ijk}n_i n_k$, disappears.\\\\
+7\\
+This is the one that winds up being identical to term three.\\
+$\delta_{ij} \epsilon_{ilm} n_m sin\alpha cos alpha$\\
+$= \epsilon_{jlm} n_m sin \alpha cos \alpha$\\
+Here's the trick.  The k from term 3, rewritten here for convenience: \\
+$\epsilon_{ljk}n_k\space sin\alpha\space cos\alpha$, \\
+and the m from term 7 are summation variables.  Also note that while you're free to choose any values for $l$ and $j$ you like, they have to be the same values in term 3 and 7.  So, when I run my sum through either k or m, by choosing a value for, let's say k, I fix the values of j and l, (they have to not be equal to the chose k or m to avoid making the Levi-Civita symbol zero).  Since I've now fixed j and l, there's only one value of m that will be non-zero.  Essentially, this makes k and m move in lock step with each other.  Now, for the anti-symmetry trick.  If I switch any two indices in a Levi-Civita symbol, I change it's sign.  If you check, you'll see that the j and l are reversed in order between terms 3 and 7.  This means that the two terms will always have opposite signs, but the same values, and will sum to 0.  Terms 3 and 7 are removed from the rest of the process.\\\\
+8\\
+Term eight is similar to term six but with different indices.  It is equal to 0 for the same reason having to do with the cross product of parallel vectors.\\\\
+9\\
+$\epsilon_{ijk} n_k \epsilon_{ilm} n_m sin^2 \alpha$\\
+First, we need to rearrange the indices to make use of the identity that transforms a product of $\epsilon$s into a difference of products of $\delta$s.\\
+$\epsilon_{ijk} n_k \epsilon_{ilm} n_m sin^2 \alpha = \epsilon_{jki} n_k \epsilon_{lmi} n_m sin^2 \alpha$\\
+The operation above cycled the indices on the $\epsilon$s to make them look like the identity as recroded in the notes.  Cycling the indices on a Levi-Civita symbol is symmetric and introduces no sign change.  Once this is done, we can use the identity, \\
+$\epsilon_{jki} \epsilon_{lmi} = \delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl}$, \\
+to turn term 9 into \\
+$\left(\delta_{jl} \delta_{km}n_k n_m - \delta_{jm} \delta_{kl}n_k n_m\right) sin^2 \alpha$\\
+I'll refer to the first subterm of 9 as 9a and to the second subterm as 9b.  It's easy to get carried away and try to think or write out all the different combinations of indices in this one.  The term can be evaluated much more quickly by turning off all original thinking and just using pre-existing tricks though.  First, the 9a term contains a dot product, so \\
+$\delta_{jl} \delta_{km}n_k n_m  sin^2 \alpha = \delta_{jl} sin^2 \alpha$\\
+Second, 9b can be simplified mechanically by running the same, '$\delta_{ij}$ renames an index of what it's applied to' trick we've been running throughout.  Here's the result,
+$\delta_{jm} \delta_{kl}n_k n_m = n_l n_j sin^2 \alpha$\\
+The final result is \\
+$\delta_{jl} sin^2 \alpha - n_l n_j sin^2 \alpha$\\\\
+
+{\bf Summing the terms}\\\\
+The remaining five, or six terms, depending on how you count, are summed to give:\\
+$\delta_{jl} cos^2 \alpha + \delta_{jl} sin^2 \alpha + n_j n_l cos \alpha \left(1 - cos \alpha \right)\\
++ n_l n_j \left(1 - cos \alpha \right)^2 + n_l n_j cos \alpha \left(1 - cos \alpha \right) - n_l n_j sin^2 \alpha$\\
+The first two terms add, and the third and fifth terms just double to give, \\
+$\delta_{jl} + 2 n_j n_l cos \alpha \left(1 - cos \alpha \right)\\
++ n_l n_j \left(1 - cos \alpha \right)^2 - n_l n_j sin^2 \alpha$\\
+This leaves a few cosine terms to expand and evaluate\\
+$2 cos\alpha - 2 cos^2 \alpha$\\
+$-2 cos\alpha + cos^2 \alpha + 1$\\
+This leaves us with $-cos^2 \alpha + 1 = sin^2 \alpha$\\
+Plugging this back into the original sum of terms we get, \\
+$\delta_{jl} + n_l n_j sin^2 \alpha - n_l n_j sin^2 \alpha = \delta_{jl}$\\
+It's done!
+
+
+
+
+
+%\newpage
+%\section{board 2}
+
+%It looks like board 2 is just a better quality photo of board 1.
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board2_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 2)}
+%\label{Board 2}
+%\end{figure}
+
+%\newpage
+%\section{board 3}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board3_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 3)}
+%\label{Board 3}
+%\end{figure}
+
+
+%Board 13
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board13_06_19_2014.JPG}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 13}
+%\label{Board 13}
+%\end{figure}
+
+%Board 14
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board14_06_19_2014.JPG}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 14}
+%\label{Board 14}
+%\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+%Board 4a
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board4a_2014_06_12.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 4a}
+%\label{Board 4a}
+%\end{figure}
+
+
+
+
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
