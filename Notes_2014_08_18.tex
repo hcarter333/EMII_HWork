@@ -1,0 +1,254 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Notes 2014/08/18}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+%\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+%\maketitle % title page is now complete
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+\centerline{\bf EMII Notes 2014/08/18}
+\bigskip
+
+Summary:  Having worked through the examples that looked the most difficult, today's notes contain examples that are pick-up work from the easy problems.  These are simple-ish index identities.\\\\
+
+$\nabla \cdot \vec{r} = 3$\\
+$= \dfrac{\partial}{\partial x_i} r_i$\\
+Keep in mind that $r_1 = x$, $r_2 = y$, and $r_3 = z$.  Using the rules of partial differentiation, when the partial operates on the variable it is with respect to it will return 1, and when it operates on any other variable, it will return 0.  The results sum to 3.\\\\
+
+$\vec{\nabla} \times \vec{r} = 0$\\
+$=\epsilon_{ijk} \partial_j r_k$\\
+$= 0$
+
+For the $\epsilon{ijk}$ to evaluate to a non-zero result, $j$ and $k$ have to not be equal.  However, as discussed above, if $J \ne k$, then the partial derivative evaluates to zero.  Consequently, the entire expression evaluates to zero.
+\\\\
+
+$\nabla^2 \dfrac{1}{r} = 0$\\
+The trick here is to do the derivatives one at a time, keeping things in index notation and look for things to cancel out.  There's also one other identity we'll need $r^2 = x_i x_i$, where the $x_i$ are the Cartesian components of the coordinate system.
+\\
+So,
+\\
+$\nabla^2 \dfrac{1}{r} = \partial_i \left(- \dfrac{x_i}{r^3}\right) = -\dfrac{3}{r^3} + \dfrac{3x_i x_i}{r^5}$,
+\\
+but, $x_i x_i = r^2$, so the r.h.s. above is 0.
+
+For multipole work where you're taking partial derivatives in multiple dimensions, this comes in handy for expressions like:
+\\
+$\delta_{ij}\partial_i \partial_j \partial_k \dfrac{1}{r}$,
+\\
+because the terms can be rearranged to show that any such expression is 0.  For way more detail, check out the material near equation 6.26 in https://drive.google.com/file/d/0B30APQ2sxrAYcHl2R3pCSG1HQXM/edit?usp=sharing
+\\\\
+
+$\vec{\nabla} \times \vec{\nabla}f = 0$
+\\
+$= \epsilon_{ijk} \partial_j \partial_k f$
+\\
+The trick here is to think about what terms will survive and what the Levi-Civita symbol will do to them negative sign-wise.  Only pairs of derivatives where $j \ne k$ will survive the Levi-Civita.  There will be two of each of these terms, but they will be of opposite signs and will cancel, for example,
+\\
+$\epsilon{i23}\partial_2 \partial_3 = -\epsilon{i32}\partial_3 \partial_2$.
+\\
+Hence, all terms will cancel and we have a zero result, and a handy identity moving forward:
+\\
+$\epsilon_{ijk}\partial_j\partial_k = 0$
+\\
+
+
+
+
+
+
+%\newpage
+%\section{board 2}
+
+%It looks like board 2 is just a better quality photo of board 1.
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board2_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 2)}
+%\label{Board 2}
+%\end{figure}
+
+%\newpage
+%\section{board 3}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board3_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 3)}
+%\label{Board 3}
+%\end{figure}
+
+
+%Board 13
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board13_06_19_2014.JPG}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 13}
+%\label{Board 13}
+%\end{figure}
+
+%Board 14
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board14_06_19_2014.JPG}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 14}
+%\label{Board 14}
+%\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+%Board 4a
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board4a_2014_06_12.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 4a}
+%\label{Board 4a}
+%\end{figure}
+
+
+
+
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
