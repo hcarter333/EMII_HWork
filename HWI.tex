@@ -9,6 +9,7 @@
 \usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
 \usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
 \usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
 
 \begin{document}
 
@@ -77,6 +78,8 @@ Which we can commute to get
 $= B_i \epsilon_{ijk} C_j A_k = \vec{B} \cdot \left(\vec{C} \times \vec{A}\right)$
 \\\\
 Done!
+\\
+\PRLsep
 \\\\
 $\vec{\nabla} \cdot \left(\vec{\nabla} \times \vec{A} \right) = 0$
 \\
@@ -85,7 +88,8 @@ $= 0$
 
 If $i$ and $j$ are equal, then the Levi-Civita evaluates to zero.  If they are not equal, then swapping the two indices produces the same mixed partial derivative result, but with a negative sign inserted by swapping indices in the Levi-Civita symbol.  These equal but opposite terms all sum to zero giving the advertised result.
 \\\\
-
+\PRLsep
+\\
 $\vec{\nabla} \times \vec{\nabla}f = 0$
 \\
 $= \epsilon_{ijk} \partial_j \partial_k f$
@@ -97,7 +101,9 @@ $\epsilon{i23}\partial_2 \partial_3 = -\epsilon{i32}\partial_3 \partial_2$.
 Hence, all terms will cancel and we have a zero result, and a handy identity moving forward:
 \\
 $\epsilon_{ijk}\partial_j\partial_k = 0$
-\\\\
+\\
+\PRLsep
+\\
 $\vec{\nabla} \times \vec{\nabla} \times \vec{A} = \vec{\nabla}\left(\vec{\nabla} \cdot \vec{A}\right) - \nabla^2 \vec{A}$
 \\
 $= \epsilon_{lmi} \partial_m \epsilon_{ijk} \partial_j A_k$
@@ -108,17 +114,23 @@ $= \epsilon_{lmi} \partial_m \epsilon_{ijk} \partial_j A_k = \epsilon_{ijk} \par
 $=\delta_{il}\delta_{jm}\partial_j\partial_l A_m - \delta_{im}\delta_{jl}\partial_j\partial_l A_m$
 \\
 $= \partial_i \partial_j A_j - \partial_j \partial_j A_i = \vec{\nabla}\left(\vec{\nabla}\cdot \vec{A}\right) - \nabla^2 \vec{A}$
-\\\\
-
+\\
+\PRLsep
+\\
 $\nabla \cdot \vec{r} = 3$\\
 $= \dfrac{\partial}{\partial x_i} r_i$\\
-Keep in mind that $r_1 = x$, $r_2 = y$, and $r_3 = z$.  Using the rules of partial differentiation, when the partial operates on the variable it is with respect to it will return 1, and when it operates on any other variable, it will return 0.  The results sum to 3.\\\\
+Keep in mind that $r_1 = x$, $r_2 = y$, and $r_3 = z$.  Using the rules of partial differentiation, when the partial operates on the variable it is with respect to it will return 1, and when it operates on any other variable, it will return 0.  The results sum to 3.
+\\
+\PRLsep
+\\
 $\vec{\nabla} \times \vec{r} = 0$\\
 $=\epsilon_{ijk} \partial_j r_k$\\
 $= 0$
 
 For the $\epsilon{ijk}$ to evaluate to a non-zero result, $j$ and $k$ have to not be equal.  However, as discussed above, if $J \ne k$, then the partial derivative evaluates to zero.  Consequently, the entire expression evaluates to zero.
-\\\\
+\\
+\PRLsep
+\\
 $\nabla^2 \dfrac{1}{r} = 0$\\
 The trick here is to do the derivatives one at a time, keeping things in index notation and look for things to cancel out.  There's also one other identity we'll need $r^2 = x_i x_i$, where the $x_i$ are the Cartesian components of the coordinate system.
 \\
@@ -127,8 +139,8 @@ So,
 $\nabla^2 \dfrac{1}{r} = \partial_i \left(- \dfrac{x_i}{r^3}\right) = -\dfrac{3}{r^3} + \dfrac{3x_i x_i}{r^5}$,
 \\
 but, $x_i x_i = r^2$, so the r.h.s. above is 0.
-\\\\
-
+\\
+\PRLsep
 
 \newpage
 
@@ -206,8 +218,27 @@ This leaves us with $-cos^2 \alpha + 1 = sin^2 \alpha$\\
 Plugging this back into the original sum of terms we get, \\
 $\delta_{jl} + n_l n_j sin^2 \alpha - n_l n_j sin^2 \alpha = \delta_{jl}$\\
 It's done!
+\PRLsep
 \newpage
 \bigskip
+{\bf 3.a.}
+\\
+$D_{ij} = A_{ik} B_{kl} C_{jl}$
+\\
+We know a few rules about this.  First of all rows times columns denote matrix multiplication, of course, the rows need to go first.  Second, columns times columns indicates a multiply with a matrix transpose.  Rearranging the terms we can write:
+\\
+Let's review a bit before we make our next leap of logic.  We decided that locking column to ro resultsed in $A_{ik} B_{kl} = \left(AB\right)_{il}$.  We also know that from the notes that locking row to row results in a transpose multiply like this, 
+\\
+$M_{ki}M_{kj} = M^T M$
+\\
+Think about it a bit more though.  In the first example, the locked column matric came first.  In other words, the first matrix in the second example is in fact the one that was transposed.  OK, that's nice, but what if we have the case for this problem, where the rows are locked together, but the columns are?  Our matrix multiply rule above states that we have column locked to row in that order.  So, if we have column locked to column, then the second matrix was transposed, not the first.  This gives us the following.  NOTE:  Check this with Dr. Pope on Monday.
+\\
+$D_{ij} = \left(AB\right)_{il} C_{jl}$
+\\
+$D_{ij} = ABC^T$
+\\
+\PRLsep
+\\
 {\bf 3.b.}  
 \\
 Show that 
@@ -264,8 +295,9 @@ W_{31} & W_{32} & W_{33}\\
 \end{vmatrix}$\\\\
 $=W_{11}W_{22}W_{33} - W_{11}W_{23}W_{32} - W_{12}W_{21}W_{33} + W_{12}W_{23}W_{31} + W_{13}W_{21}W_{32} - W_{13}W_{22}W_{31}$\\\\
 The results are the same.
-
-\bigskip
+\\
+\PRLsep
+\\
 {\bf 3.c.}  "Let $A_{\mu\nu}$ be an antisymmetric 4-tensor, and $S_{\mu\nu}$ be a symmetric 4-tensor. Prove that after making a Lorentz transformation using the transformation $\Lambda^\mu_{\;\nu}$, the resulting tensors $A^\prime_{\mu\nu}$ and $S^\prime_{\mu\nu}$ are again, respectively, antisymmetric and symmetric."
 \\
 The Lorentz transform for the symmetric quantity is 
