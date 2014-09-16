@@ -86,7 +86,7 @@ $\vec{\nabla} \cdot \left(\vec{\nabla} \times \vec{A} \right) = 0$
 $=\partial_i \epsilon_{ijk} \partial_j A_k$\\
 $= 0$
 
-If $i$ and $j$ are equal, then the Levi-Civita evaluates to zero.  If they are not equal, then swapping the two indices produces the same mixed partial derivative result, but with a negative sign inserted by swapping indices in the Levi-Civita symbol.  These equal but opposite terms all sum to zero giving the advertised result.
+If $i$ and $j$, the indices of the two partials, are equal, then the Levi-Civita evaluates to zero.  If they are not equal, then swapping the two indices produces the same mixed partial derivative result, but with a negative sign inserted by swapping indices in the Levi-Civita symbol.  These equal but opposite terms all sum to zero giving the advertised result.
 \\\\
 \PRLsep
 \\
@@ -94,9 +94,9 @@ $\vec{\nabla} \times \vec{\nabla}f = 0$
 \\
 $= \epsilon_{ijk} \partial_j \partial_k f$
 \\
-The trick here is to think about what terms will survive and what the Levi-Civita symbol will do to them negative sign-wise.  Only pairs of derivatives where $j \ne k$ will survive the Levi-Civita.  There will be two of each of these terms, but they will be of opposite signs and will cancel, for example,
+The trick here is to think about what terms will survive and what the Levi-Civita symbol will do to them negative sign-wise.  Only pairs of derivatives where $j \ne k$ will survive the Levi-Civita.  There will be two of each of these terms for each choice of $i$, but they will be of opposite signs and will cancel, for example,
 \\
-$\epsilon{i23}\partial_2 \partial_3 = -\epsilon{i32}\partial_3 \partial_2$.
+$\epsilon_{i23}\partial_2 \partial_3 = -\epsilon_{i32}\partial_3 \partial_2$.
 \\
 Hence, all terms will cancel and we have a zero result, and a handy identity moving forward:
 \\
@@ -127,7 +127,7 @@ $\vec{\nabla} \times \vec{r} = 0$\\
 $=\epsilon_{ijk} \partial_j r_k$\\
 $= 0$
 
-For the $\epsilon{ijk}$ to evaluate to a non-zero result, $j$ and $k$ have to not be equal.  However, as discussed above, if $J \ne k$, then the partial derivative evaluates to zero.  Consequently, the entire expression evaluates to zero.
+For the $\epsilon_{ijk}$ to evaluate to a non-zero result, $j$ and $k$ have to not be equal.  However, as discussed above, if $j \ne k$, then the partial derivative evaluates to zero.  Consequently, the entire expression evaluates to zero.
 \\
 \PRLsep
 \\
@@ -150,9 +150,9 @@ $M_{ij} = \delta_{ij}cos \alpha + n_i n_j \left(1 - cos \alpha\right) + \epsilon
 Keep in mind that $n_i$ is defined to be a unit vector.  The transpose relation that we're supposed to show can be written down as $M_{ij}M_{ik} = \delta_{jk}$\\
 
 
-Multiplying the matrix by itself will resullt in 9 terms.  We can make two of them go away identically and two others subtract from each other to disappear.\\\\
+Multiplying the thre terms of $M_{ij}$ by themselves will resullt in 9 terms.  We can make two of them go away identically and two others subtract from each other to disappear.\\\\
 
-We'll make one change to the index just for clarities sake and rename $M_{ik}$ to $M_{il}$, and when referring to the k component in the $M_{il}$ matrix, it will be called m.
+We'll make one change to the index just for clarity's sake and rename $M_{ik}$ to $M_{il}$, and when referring to the k component in the $M_{il}$ matrix, it will be called m.
 
 The nine terms are\\
 1\\
@@ -165,19 +165,19 @@ The trick here was to absorb the $\delta_{il}$ into the $n_i$, changing the inde
 3\\
 $\delta_{il}\epsilon_{ijk}n_k sin\alpha cos\alpha$\\
 $=\epsilon_{ljk}n_k\space sin\alpha\space cos\alpha$\\
-The trick hin this first step was to apply the $\delta$ to the $\epsilon$ and switch the appropriate index name as above.  There's one more trick that can be played and we'll see it when we gget to the 7th term.  For now, suffice it to say tht this term is going to go away in the end.\\\\
+The trick in this first step was to apply the $\delta$ to the $\epsilon$ and switch the appropriate index name as above.  There's one more trick that can be played and we'll see it when we get to the 7th term.  For now, suffice it to say tht this term is going to go away in the end.\\\\
 4\\
 $\delta_{ij} n_i n_l cos\alpha\left(1 - cos\alpha\right)$\\
 First, keep in mind that we're still multiplying the $il$ terms times the $ij$ terms, they're just written out of order above.  We can play the same game we played in term number two to get a final answer of \\
 $n_j n_l cos\alpha \left(1 - cos\alpha\right)$\\
-These two terms, 2 and 4 are the same, so we just wind up with 2 teims term 2.\\\\
+These two terms, 2 and 4 are the same, so we just wind up with 2 times term 2.\\\\
 
 5\\
 $n_in_ln_in_j\left(1 - cos\alpha\right)^2$\\
-$= n_l n_i \left(1 - cos\alpha\right)^2$\\
+$= n_l n_j \left(1 - cos\alpha\right)^2$\\
 The trick here is to group the two $n_i$ terms next to each other and grecognize that group as teh dot product of two unit vectors.  Since they're unit vectors, the dot product evaluates to one.\\\\
 6\\
-$n_n n_l \epsilon_{ijk} n_k sin\alpha \left(1 - cos\alpha\right)$
+$n_i n_l \epsilon_{ijk} n_k sin\alpha \left(1 - cos\alpha\right)$
 $= 0$\\
 The trick here is to spot the cross product of two unit vectors.  Since the unit vector is of course identical to itself, it is also parallel to itself, so the cross product, $\epsilon_{ijk}n_i n_k$, disappears.\\\\
 7\\
@@ -186,7 +186,7 @@ $\delta_{ij} \epsilon_{ilm} n_m sin\alpha cos alpha$\\
 $= \epsilon_{jlm} n_m sin \alpha cos \alpha$\\
 Here's the trick.  The k from term 3, rewritten here for convenience: \\
 $\epsilon_{ljk}n_k\space sin\alpha\space cos\alpha$, \\
-and the m from term 7 are summation variables.  Also note that while you're free to choose any values for $l$ and $j$ you like, they have to be the same values in term 3 and 7.  So, when I run my sum through either k or m, by choosing a value for, let's say k, I fix the values of j and l, (they have to not be equal to the chose k or m to avoid making the Levi-Civita symbol zero).  Since I've now fixed j and l, there's only one value of m that will be non-zero.  Essentially, this makes k and m move in lock step with each other.  Now, for the anti-symmetry trick.  If I switch any two indices in a Levi-Civita symbol, I change it's sign.  If you check, you'll see that the j and l are reversed in order between terms 3 and 7.  This means that the two terms will always have opposite signs, but the same values, and will sum to 0.  Terms 3 and 7 are removed from the rest of the process.\\\\
+and the m from term 7 are summation variables.  Also note that while you're free to choose any values for $l$ and $j$ you like, they have to be the same values in term 3 and 7.  So, when I run my sum through either k or m, by choosing a value for, let's say k, I fix the values of j and l, (they have to not be equal to the chosen k or m to avoid making the Levi-Civita symbol zero).  Since I've now fixed j and l, there's only one value of m that will be non-zero.  Essentially, this makes k and m move in lock step with each other.  Now, for the anti-symmetry trick.  If I switch any two indices in a Levi-Civita symbol, I change it's sign.  If you check, you'll see that the j and l are reversed in order between terms 3 and 7.  This means that the two terms will always have opposite signs, but the same values, and will sum to 0.  Terms 3 and 7 are removed from the rest of the process.\\\\
 8\\
 Term eight is similar to term six but with different indices.  It is equal to 0 for the same reason having to do with the cross product of parallel vectors.\\\\
 9\\
@@ -284,7 +284,7 @@ Show that
 \\
 $W_{il}W_{jm}W_{kn}\epsilon_{lmn} = det\left(W\right)\epsilon_{lmn}$
 
-We're to do this by first showing that the left hand side is antisymmetric with respect to the $i$, $j$, and $k$ indices and therefore proportional to $\epsilon_{lmn}$ and then by showing that for a concreted example, $i=1$, $j=2$, $k=3$, the left hand side is equal to $det\left(W\right)$
+We're to do this by first showing that the left hand side is antisymmetric with respect to the $i$, $j$, and $k$ indices and therefore proportional to $\epsilon_{lmn}$ and then show that for a concrete example, $i=1$, $j=2$, $k=3$, the left hand side is equal to $det\left(W\right)$.  With this concrete example, we'll merely point out since now that any permutation of $i$, $j$, and $k$ on the right hand side will produce the same result keeping in mind that the Levi-Civita tensor is anti-symmetric of course.
 
 There's a long way and a short was to show the antyisymmetry of the left hand side.\\
 
