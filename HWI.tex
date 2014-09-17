@@ -248,15 +248,11 @@ Which via eq. 1.53 in the class notes is the rotation matrix that denotes rotati
 \\
 $D_{ij} = A_{ik} B_{kl} C_{jl}$
 \\
-We know a few rules about this.  First of all rows times columns denote matrix multiplication, of course, the rows need to go first.  Second, columns times columns indicates a multiply with a matrix transpose.  Rearranging the terms we can write:
-\\
-Let's review a bit before we make our next leap of logic.  We decided that locking column to ro resultsed in $A_{ik} B_{kl} = \left(AB\right)_{il}$.  We also know that from the notes that locking row to row results in a transpose multiply like this, 
-\\
-$M_{ki}M_{kj} = M^T M$
-\\
-Think about it a bit more though.  In the first example, the locked column matric came first.  In other words, the first matrix in the second example is in fact the one that was transposed.  OK, that's nice, but what if we have the case for this problem, where the rows are locked together, but the columns are?  Our matrix multiply rule above states that we have column locked to row in that order.  So, if we have column locked to column, then the second matrix was transposed, not the first.  This gives us the following.  NOTE:  Check this with Dr. Pope on Monday.
+Here's the rule for matrix multiplication.  If you look at $A_{ik}$ and $B_{kl}$ above, you'll notice that we're selecting a row in $A$ and then multiplying and summing each of it's column entries with the row entries of a selected column in $B$.  That's the definition of the matrix multiply procedure.  Consequently, we can rewrite the above as 
 \\
 $D = \left(AB\right)_{il} C_{jl}$
+\\
+Now, you'll notice that in the resulting multiply between the $\left(AB\right)$ result and $C$, we have a column summed with a column.  The column in the left $\left(AB\right)$ operand fits with matrix multiplication, but the column dummy index in $C$ indicates that the matrix multiply operation which should be summing over rows is summing over columns instead.  In this case then, we're actually operating on the tranpose of $C$ and 
 \\
 $D = ABC^T$
 \\
