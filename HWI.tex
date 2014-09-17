@@ -280,7 +280,7 @@ Show that
 \\
 $W_{il}W_{jm}W_{kn}\epsilon_{lmn} = det\left(W\right)\epsilon_{lmn}$
 
-We're to do this by first showing that the left hand side is antisymmetric with respect to the $i$, $j$, and $k$ indices and therefore proportional to $\epsilon_{lmn}$ and then show that for a concrete example, $i=1$, $j=2$, $k=3$, the left hand side is equal to $det\left(W\right)$.  With this concrete example, we'll merely point out since now that any permutation of $i$, $j$, and $k$ on the right hand side will produce the same result keeping in mind that the Levi-Civita tensor is anti-symmetric of course.
+This will be done by first showing that the left hand side is antisymmetric with respect to the $i$, $j$, and $k$ indices and therefore proportional to $\epsilon_{lmn}$ and then showing that for any choice of free indices, for example, $i=1$, $j=2$, $k=3$, the expression's magnitude evaluates to  $det\left(W\right)$.  With this concrete example, we'll merely point out since now that any permutation of the free indices $i$, $j$, and $k$ will produce the same magnitude result with the Levi-Civita tensor setting the sign of the expression.
 
 There's a long way and a short was to show the antyisymmetry of the left hand side.\\
 
@@ -301,8 +301,16 @@ $W_{il}W_{jm}W_{kn} \rightarrow W_{im}W_{jl}W_{kn}$
 
 Swapping the summation indices however, swaps the two indices in the Levi-Civita symbol which changes the sign of the symbol.  This means that, interchanging the first indices of any two terms in the product introduces a negative sign and the product as a whole is anti-symmetric under the swap of $i$, $j$, or $k$.
 \\
+\\
+Here's the easiest way to say it.  If the summation indices are swapped between any two termss, then the entire expression has the same magnitude, but the Levi-Civita symbol will change sign.  For example, swapping $l$ and $m$ gives
+\\
+$W_{il}W_{jm}W_{kn} \epsilon_{lmn} = -W_{im}W_{jl}W_{kn} \epsilon_{mln}$.
+\\
+This is true for the swap of any two summation indices, therefore, the entire expression is antisymmetric and proportional to the Levi-Civita tensor.
+\\
+\\
 
-The Long Way
+The Long Way (mostly for my notes in case I get confused later)
 
 The second indices in each term are limited by the non-zero values of the Levi-Civita symbol that is contacted with the first three terms of the product.  We can fairly easily write out the six available combinations,\\
 $W_{il}W_{jm}W_{kn}\epsilon_{lmn}$\\
@@ -315,7 +323,7 @@ When the first term becomes the sixth term, there is a corresponding sign change
 
 {\bf Showing the Concrete determinant}\\
 
-The second part of the problem is to show that for the index choices, $i = 1$, $j = 2$, $k = 3$, the l.h.s. is equal to $det\left(W\right)$.  This is just plug and chug work\\
+The second part of the problem is to show that for the example set of index choices, $i = 1$, $j = 2$, $k = 3$, the l.h.s. is equal to $det\left(W\right)$.  This is just plug and chug work\\
 Start with\\
 $W_{il}W_{jm}W_{kn} \rightarrow W_{1l}W_{2m}W_{3n}$\\
 There are six terms in the contracted sum\\
