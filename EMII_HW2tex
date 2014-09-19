@@ -1,0 +1,184 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Homework II Due 2014/09/24}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+
+{\bf 3}\\
+This problem focuses on deriving the Lorentz transform for the $\vec{B}$ field.  First though, let's look at the result we want to get and compare it to the space Lorentz transform.  The general Lorentz transform for space is:
+\\
+$\vec{r}^\prime = \vec{r} + \dfrac{\gamma - 1}{v^2} \left(\vec{v} \cdot \vec{r}\right)\vec{v} - \gamma \vec{v} t$
+\\
+What's going on here is that the portion of the $\vec{r}$ vector parallel to the velocity vector is being subtracted away from the total posiition vector.  
+\\
+$\vec{r} - \dfrac{\left(\vec{v} \cdot \vec{r}\right)\vec{v}}{v^2}$
+\\
+because it is broken with respect the Lorentz transform.  Remember that the portions for the position vector perpendicular to the velocity are unaffected, so they remain untouched.  We then plug back in the Lorentz corrected portion of the position vector.
+\\
+$\gamma \left(\vec{v} \cdot \vec{r}\right)\vec{v}$
+\\
+And, of course, we have the  $\gamma \vec{v} t$ term which reflects the rotation of the space into the time dimension.
+\\
+All in all, we can express the position transform as 
+\\
+$\vec{r}^\prime = \vec{r} - \vec{r}_\parallel + \gamma\vec{r}_\parallel -\gamma\vec{v}t
+\\$
+\\
+Now, let's look at the final result we're shooting for in the $\vec{B}$ field transformation.  From eq. 252 we have
+\\
+$\vec{B}^\prime = \gamma \left(\vec{B} - \vec{v} \times \vec{E}\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v}$
+\\
+This is a little different, first, notice that the untransformed $\vec{B}$ field is now multiplied by $\gamma$.
+\\
+Leaving that aside for the moment, we're still pulling out the broken parallel portion ala 
+\\
+$\gamma\vec{B} - \dfrac{\left(\vec{v} \cdot \vec{B}\right)\vec{v}}{v^2}$
+\\
+Well, sort of, there's still that factor of $\gamma$ there.  Let's try this a different way.  Embrace the gamma and write the first term as a sum of parallel and perpendicular fields.
+\\
+$\gamma\vec{B} = \gamma\vec{B}_\parallel + \gamma\vec{B}_\perp$
+\\
+Now, we see that we're really pulling the transformed parallel portion out while leaving an untransformed version of the parallel portion in...
+\\
+$\gamma\vec{B}_\parallel + \gamma\vec{B}_\perp - \gamma\vec{B}_\parallel + \vec{B}_\parallel$
+\\
+The end result is the original parallel B field with a $\gamma$ adjusted perpendicular portion.
+\\
+$\vec{B}^\prime = \vec{B}_\parallel + \gamma\vec{B}_\perp - \vec{v} \times \vec{E}$
+\\
+Karapetoff or Sommerfeld mentioned the reason the parallel component of the field cannot be modified, I've simply forgotten.  I'll look it up.
+\\
+Let's take a quick look at the expression for the E field as well and see if it has the properties in regards to it's parallel and perpendicular components.\\
+$\vec{E}^\prime = \gamma \left(\vec{E} + \vec{v} \times \vec{B}\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{E}\right)\vec{v}$
+\\
+This gives,
+\\
+$\vec{E}^\prime = \vec{E}_\parallel + \gamma\vec{E}_\perp + \vec{v} \times \vec{B}$
+\\
+Next Step:  Look up Karapetoff or Sommerfeld explanation for  parallel field.
+
+Next Step: label the above as notes
+\\
+\\
+\PRLsep
+
+
+
+
+
+
+
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
