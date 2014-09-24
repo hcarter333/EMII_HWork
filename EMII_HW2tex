@@ -261,7 +261,7 @@ $\gamma\vec{B}_\parallel + \gamma\vec{B}_\perp - \gamma\vec{B}_\parallel + \vec{
 \\
 The end result is the original parallel B field with a $\gamma$ adjusted perpendicular portion.
 \\
-$\vec{B}^\prime = \vec{B}_\parallel + \gamma\vec{B}_\perp - \vec{v} \times \vec{E}$
+$\vec{B}^\prime = \vec{B}_\parallel + \gamma\vec{B}_\perp - \gamma \vec{v} \times \vec{E}$
 \\
 Karapetoff or Sommerfeld mentioned the reason the parallel component of the field cannot be modified, I've simply forgotten.  I'll look it up.
 \\
@@ -319,8 +319,108 @@ $ =\gamma \dfrac{\gamma - 1}{v^2} v_i \vec{v} \cdot \left(\vec{v} \times \vec{B}
 \\
 Since the last expression is the dot product of the velocity vector and a cross product with the velocity vector as one of its operands, then the dot product is, by definition, between two orthogonal vectors, and is zero.
 \\
-
-
+\\
+OK, now that we've rehashed the warmup work from class, let's get started on showing how to tranform the $B$ field.
+\\
+$F^{\prime ij} = \lambda^i_{\;\rho} \Lambda^j_{\;\sigma}F^{\rho\sigma}$
+\\
+$ = \lambda^i_{\;0} \Lambda^j_{\;0} F^{00} + \lambda^i_{\;k} \Lambda^j_{\;l} F^{kl} + \lambda^i_{\;0} \Lambda^j_{\;l} F^{0l} + \lambda^i_{\;k} \Lambda^j_{\;0} F^{k0}$
+\\
+The first term is zero because $F^{\mu\nu}$ is antisymmetric.  This leaves
+\\
+$ = \left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right) \left(\dfrac{\gamma - 1}{v^2} v_i v_l + \delta_{il}\right)\epsilon_{klm} B_m -\gamma v_i \left(\dfrac{\gamma - 1}{v^2} v_j v_l + \delta_{jl}\right)E_l + \gamma v_j \left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right)E_k$
+\\
+\\
+We'll deal with Kronecker delta terms of the last two terms containing the electric field $E$ first.
+\\
+$= -\gamma\left(v_i \delta_{jl} E_l - v_j \delta_{ik} E_k\right)$
+\\
+$= -\gamma\left(v_i E_j - v_j E_i\right) = -\gamma\left(\vec{v} \times \vec{E} \right)_k$
+\\
+Getting back to the non-Kronecker delta terms of the $E$ field terms we have,
+\\
+$-\gamma v_i v_j v_l \left(\dfrac{\gamma - 1}{v^2}\right) E_l + \gamma v_j v_i v_k \left(\dfrac{\gamma - 1}{v^2}\right) E_k$
+\\
+The key here is to recognize the dot product of $\vec{E}$ with $\vec{v}$ in each term.  We wind up subtracting the same two terms from each other resulting in zero.
+\\
+Now, let's hit the non-Kronecker delta terms of the first two terms involving $B_m$.
+\\
+$\gamma v_k \left(\dfrac{\gamma - 1}{v^2}\right)v_i v_l \epsilon_{klm}B_m$
+\\
+$= \left(\dfrac{\gamma - 1}{v^2}\right) v_i v_l \epsilon_{klm} v_k B_m = \left(\dfrac{\gamma - 1}{v^2}\right) \vec{v} \cdot \left(\vec{v} \times \vec{B}\right) = 0$
+\\
+OK, all that's left are the Kronecker delta terms involving the $B$ field.  These are,
+\\
+$\left(\dfrac{\gamma - 1}{v^2}\right) v_i v_k + \delta_{ik}$
+\\
+\PRLsep
+\\
+\textbf{4.a.}
+\\
+Given:
+\\
+$R^2 = \eta_{\mu\nu} x^\mu x^\nu$
+\\\\
+We want to show that 
+\\
+\\
+$\partial_\mu R = \dfrac{\eta_{\mu\nu}}{R}$
+\\
+The solution is based on the similar 3 space problem.  I'll include a bit more detail here.  Start with
+\\
+$\partial_\mu R^2 = 2R \partial_\mu R = 2R R^{-1} \frac{1}{2} 2 \eta_{\mu\nu} x^\nu$
+\\
+The first step comes from the chain rule, the next step comes from treating $R$ as 
+\\
+$R = \sqrt{\eta_{\mu\nu} x^\mu x^\nu}$
+\\
+keeping in mind that the $\eta_{\mu\nu}$ only evaluates when the indices are equal.  Applying the chain rule to the result of the first step gives us back half of aan inverted version of $R$ and the Minkowski-esque sum of all four of the $x^\mu$ internal to the square root, which gives us the $2\eta_{\mu\nu}x^\nu$ piece of the result.  In any event, this can be rearranged to give
+\\
+$2R\partial_\mu R = 2 \eta_{\mu\nu} x^\nu $
+\\
+and finally
+\\
+$\partial_\mu R = \dfrac{\eta_{\mu\nu} x^\nu}{R} $
+\\
+\PRLsep
+\\
+\textbf{4.b.}
+\\
+Now, we need to show that 
+\\
+$\Box \dfrac{1}{R^2} = 0$
+\\
+We'll work from the 3 vector example again.  Just as before, the trick here is to do the derivatives one at a time, keeping things in index notation and look for things to cancel out.  We'll need to keep the result from 4a in mind.  I'll write it both ways so it will be handy when necessary,
+\\
+$\partial_\mu R = \dfrac{\eta_{\mu\nu} x^\nu}{R}$
+\\
+and
+\\
+$\partial_\nu R = \dfrac{\eta_{\mu\nu} x^\mu}{R}$
+\\
+Here we go,
+\\
+$\Box \dfrac{1}{R^2} = $
+\\
+We use our previous result and the chain rule to get
+\\
+$\Box \dfrac{1}{R^2} = \eta^{\mu\nu}\partial_\mu \partial_\nu\left(\dfrac{1}{R^2}\right) = \eta^{\mu\nu}\partial_\mu\left(-2 R^{-3} \dfrac{\eta_{\mu\nu}x^\mu}{R}\right) = \eta^{\mu\nu}\partial_\mu\left(-2 \dfrac{\eta_{\mu\nu} x^\mu}{R^4}\right)$
+\\
+The chain rule and the previous result was used to perform the first derivative above.  Now, since $\eta^{\mu\nu}$ is a constant, we can pull it outside the second derivative and cancel it leaving
+\\
+$ = \partial_\mu\left(-2 \dfrac{x^\mu}{R^4}\right)$
+\\
+Utilizing the chain rule along with the product rule we get,
+\\
+$ = 8 \dfrac{x^\nu}{R^5}\dfrac{\eta_{\mu\nu} x^\mu}{R} - \dfrac{2}{R^4} 4 = 0$
+\\
+Remember that similarly to the three vector case, we have 
+\\
+$\partial_\mu x^\nu = 4$,
+\\
+and that
+\\
+$R^2 = \eta_{\mu\nu}x^\mu x^\nu$
 
 
 
