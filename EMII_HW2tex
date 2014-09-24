@@ -62,10 +62,32 @@
 %\end{figure}
 %\centerline{\bf EMII Homework I Due 2014/09/17}
 %\bigskip
-
+\textbf{1}
+\\
+The wave equation in four dimensions is 
+\\
+$\phi = e^{ik_\mu x^\mu} $
+\\
+Determine what conditions need to exist on the constant $k$ so that the wave equation
+\\
+$\Box \phi = 0$
+\\
+is satisfied.
+\\
+The d'Alambertian operator is going to give us second derivatives in each dimension with a negative sign in the time dimension. To get the wave equtin to work, the four terms given by the d'Alambertian need to satisfy
+\\
+$\Box \phi = k_0^2 e^{ik_\mu x^\mu} - k_1^2 e^{ik_\mu x^\mu} - k_2^2 e^{ik_\mu x^\mu} - k_3^2 e^{ik_\mu x^\mu} = 0$
+\\Consequently we get
+\\
+$k_0^2 - k_1^2 - k_2^2 - k_3^2 = 0$
+\\
+Which looks an awful lot like the line element condition that got us the time space interval in the first place.  This kind of makes sense.  $k$ is the wave vector that is going to play with the frequency to dtermine the velocity of light.
+\\
+\PRLsep
+\\
 \textbf{2.a.}
 \\
-Let's due this the clunky matrix way first, and then we'll go back and pick up the boost as rotation method if time allows.  First, write down the matrix representations of the two successive boosts.  We won't worry abou the order of multiplication since our intent is to show that the result commutes in the end anyway.  First, fill in the components of the two Lorentz transforms keeping in mind that 
+Let's do this the clunky matrix way first, and then we'll go back and pick up the boost as rotation method if time allows.  First, write down the matrix representations of the two successive boosts.  We won't worry abou the order of multiplication since our intent is to show that the result commutes in the end anyway.  First, fill in the components of the two Lorentz transforms keeping in mind that 
 \\
 $\Lambda^i_{\; j} = \delta_{ij} + \dfrac{\gamma - 1}{v^2} v_i v_j$
 \\
@@ -105,6 +127,8 @@ v_1 v_2 + 1 & -v_2 - v_1\\
 \\
 They produce the same results and therefore commute.  Since we can always adjust our coordinate system so that the velocities lie along the x axis, this result holds for any direction of velocity as long as both boosts are parallel as stated in the problem.
 \\
+\PRLsep
+\\
 \textbf{2.b.}
 \\
 Now, we have to show that result above is still a Lorentz boost.
@@ -133,27 +157,39 @@ It looks like our new velocity should be
 \\
 $v_3 = \dfrac{v_2 + v_1}{1 + v_1 v_2}$
 \\
-Let's see if this works out in terms of our new gamma.  I'll work with $\gamma^-1$ just to avoid working in denominators all day, and then I'll take the reciprocal of the result at the end.
+Let's see if this works out in terms of our new gamma.  I'll work with $\gamma^{-1}$ just to avoid working in denominators all day, and then I'll take the reciprocal of the result at the end.
+\\
 \\
 $1 - v_3^2 = 1 - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
 \\
+\\
 Setting terms over the same common denominator we get:
+\\
 \\
 $= \dfrac{1 + 2 v_1 v_2 + v_1^2 v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2} - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
 \\
+\\
 Simplifying gives:
+\\
 \\
 $= \dfrac{1 - v_1^2 - v_2^2 + v_1^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
 \\
+\\
 Taking the square root gives
+\\
 \\
 $\sqrt{1 - v_3^2} = \dfrac{\sqrt{1-v_1^2}\sqrt{1-v_2^2}}{1+ v_1 v_2}$
 \\
+\\
 Taking the reciprocal, we get 
+\\
 \\
 $\gamma_3 = \dfrac{1+ v_1 v_2}{\sqrt{1-v_1^2}\sqrt{1-v_2^2}} = \gamma_1 \gamma_2 \left(1+ v_1 v_2\right)$
 \\
+\\
 which is the gamma factor required for the resultant velocity.
+\\
+\PRLsep
 \\
 \textbf{2.c.}
 \\
@@ -188,7 +224,9 @@ $\begin{pmatrix}
 .. & .. & .. & ..\\
 \end{pmatrix}$
 \\
-Hence, it can be seen tht the two results are different and the two orders of operations do not commute.
+Hence, it can be seen that the two results are different and the two orders of operations do not commute.
+\\
+\PRLsep
 \\
 \textbf{2.d.}
 \\
@@ -217,12 +255,12 @@ Remember that for a pure boost, the $ij$ terms should look like,
 \\
 $\Lambda^i_{\; j} = \delta_{ij} + \dfrac{\gamma - 1}{v^2} v_i v_j$
 \\
-All of the $ij$ terms break this model, hence we know longer have a pure boost.
+All of the $ij$ terms break this model, hence we no longer have a pure boost.
 \\
 \PRLsep
-
+\\
 {\bf 3}\\
-This problem focuses on deriving the Lorentz transform for the $\vec{B}$ field.  First though, let's look at the result we want to get and compare it to the space Lorentz transform.  The general Lorentz transform for space is:
+This problem focuses on deriving the Lorentz transform for the $\vec{B}$ field.  First though, here are a few notes.  Let's look at the result we want to get and compare it to the space Lorentz transform.  The general Lorentz transform for space is:
 \\
 $\vec{r}^\prime = \vec{r} + \dfrac{\gamma - 1}{v^2} \left(\vec{v} \cdot \vec{r}\right)\vec{v} - \gamma \vec{v} t$
 \\
@@ -272,10 +310,6 @@ This gives,
 \\
 $\vec{E}^\prime = \vec{E}_\parallel + \gamma\vec{E}_\perp + \vec{v} \times \vec{B}$
 \\
-Next Step:  Look up Karapetoff or Sommerfeld explanation for  parallel field.
-\\
-Next Step: label the above as notes
-\\
 \\
 \PRLsep
 \\
@@ -320,7 +354,7 @@ $ =\gamma \dfrac{\gamma - 1}{v^2} v_i \vec{v} \cdot \left(\vec{v} \times \vec{B}
 Since the last expression is the dot product of the velocity vector and a cross product with the velocity vector as one of its operands, then the dot product is, by definition, between two orthogonal vectors, and is zero.
 \\
 \\
-OK, now that we've rehashed the warmup work from class, let's get started on showing how to tranform the $B$ field.
+Now that we've rehashed the warmup work from class, let's show how to tranform the $B$ field.
 \\
 $F^{\prime ij} = \lambda^i_{\;\rho} \Lambda^j_{\;\sigma}F^{\rho\sigma}$
 \\
@@ -337,21 +371,58 @@ $= -\gamma\left(v_i \delta_{jl} E_l - v_j \delta_{ik} E_k\right)$
 \\
 $= -\gamma\left(v_i E_j - v_j E_i\right) = -\gamma\left(\vec{v} \times \vec{E} \right)_k$
 \\
+If we stop one operation short above, we have an answer in terms of $i$ and $j$ which is what we need.
+\\
+\\
 Getting back to the non-Kronecker delta terms of the $E$ field terms we have,
 \\
 $-\gamma v_i v_j v_l \left(\dfrac{\gamma - 1}{v^2}\right) E_l + \gamma v_j v_i v_k \left(\dfrac{\gamma - 1}{v^2}\right) E_k$
 \\
 The key here is to recognize the dot product of $\vec{E}$ with $\vec{v}$ in each term.  We wind up subtracting the same two terms from each other resulting in zero.
 \\
-Now, let's hit the non-Kronecker delta terms of the first two terms involving $B_m$.
+Now, let's bludgeon our way through the first term involving $B_m$.
 \\
-$\gamma v_k \left(\dfrac{\gamma - 1}{v^2}\right)v_i v_l \epsilon_{klm}B_m$
+$\left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right) \left(\dfrac{\gamma - 1}{v^2} v_j v_l + \delta_{jl}\right)\epsilon_{klm} B_m $
 \\
-$= \left(\dfrac{\gamma - 1}{v^2}\right) v_i v_l \epsilon_{klm} v_k B_m = \left(\dfrac{\gamma - 1}{v^2}\right) \vec{v} \cdot \left(\vec{v} \times \vec{B}\right) = 0$
+$= \left(\left(\dfrac{\gamma - 1}{v^2}\right)^2v_i v_k v_j v_l + \delta_{ik} \left(\dfrac{\gamma - 1}{v^2}\right) v_j v_l + \delta_{ik}\delta_{jl} + \delta_{jl} \left(\dfrac{\gamma - 1}{v^2}\right) v_i v_k \right)\epsilon_{klm}B_m$
 \\
-OK, all that's left are the Kronecker delta terms involving the $B$ field.  These are,
+The first term contains a dot product of a $v$ vector and the cross product of $\vec{v} \times \vec{B}$ perpendicular to it, so it's zero.
 \\
-$\left(\dfrac{\gamma - 1}{v^2}\right) v_i v_k + \delta_{ik}$
+The third term simplifies to 
+\\
+$\delta_{ik}\delta_{jl}\epsilon_{klm} B_m = \epsilon_{ijm}B_m$
+\\
+Keep in mind here that we're actually solving for the transform of $F^\prime_{ij} = \epsilon_{ijk} B_k$ and so, this looks good.
+\\
+the last set of terms to work with are 
+\\
+$\left(\dfrac{\gamma - 1}{v^2}\right) \left(\delta_{ik}v_j v_l + \delta_{jl} v_i v_k\right) \epsilon_{klm} B_m$
+\\
+$= \left(\dfrac{\gamma - 1}{v^2}\right) \left(\epsilon_{ilm}v_j v_l + \epsilon_{kjm} v_i v_k\right) \epsilon_{klm} B_m$
+\\
+This can be written as 
+\\
+$= \left(\dfrac{\gamma - 1}{v^2}\right)\left(v_j\left(\vec{v} \times \vec{B}\right)_i - v_i \left(\vec{v} \times \vec{B}\right)_j\right)$
+\\
+Which is the same as 
+\\
+$-\left(\dfrac{\gamma - 1}{v^2}\right)\left(\vec{v} \times \left(\vec{v} \times \vec{B} \right) \right)_k$
+\\
+By a vector identity, we get
+\\
+$= -\left(\dfrac{\gamma - 1}{v^2}\right)\left(\vec{v}\left(\vec{v} \cdot \vec{B} \right) - |v^2| \vec{B}\right)$
+\\
+Simplifying:
+\\
+$-\left(\dfrac{\gamma - 1}{v^2}\right) \vec{v}\left(\vec{v} \cdot \vec{B} \right) + \dfrac{v^2\left(\gamma - 1\right)}{v^2} \vec{B}$
+\\
+$=-\left(\dfrac{\gamma - 1}{v^2}\right) \left(\vec{v} \cdot \vec{B} \right)\vec{v} + \left(\gamma - 1\right) \vec{B}$
+\\
+\\
+Now, for the grand finale bringing in all the terms, and transforming to vector notation at once, we get
+$\vec{B^\prime} = \vec{B} - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v} + \left(\gamma - 1\right)\vec{B} - \gamma \left(\vec{v} \times \vec{E}\right)$
+\\
+$= \gamma\left(\vec{B} - \left(\vec{v} \times \vec{E}\right)\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v}$
 \\
 \PRLsep
 \\
