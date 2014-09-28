@@ -185,7 +185,8 @@ $v_\mu = k_\mu$
 \\
 \textbf{3.a.}
 \\
-Express $\delta x^\mu = x^{\prime\mu} - x^\mu$ in terms of $\lambda^\mu_{\;\nu}$
+Using the definition of the infintesimal Lorentz transform, $\Lambda^\mu_{\;\nu} = \left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right)$, 
+express $\delta x^\mu = x^{\prime\mu} - x^\mu$ in terms of $\lambda^\mu_{\;\nu}$
 \\
 We know that 
 \\
@@ -197,27 +198,54 @@ $dx^\nu \Lambda^\mu_{\;\nu} = dx^{\prime \mu}$
 \\
 $dx^\nu\left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right) = dx^{\prime\mu}$
 \\
-$ = \dfrac{dx^\prime_2 - dx^\prime_1}{dx}$
+Where the above substitutes the defition of the incremental Lorentz transform,
+\\
+$\Lambda^\mu_{\;\nu} = \left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right)$
+\\
+$\delta_\nu^\mu dx^\nu + dx^\nu lambda^\mu_{\;\nu} = dx^{\prime\mu}$
+\\
+$dx^=mu + \lambda^\mu_{\;\nu} dx^\nu = dx^{\prime\mu}$
+\\
+$\lambda^\mu_{\;\nu}dx^\nu = dx^{\prime\mu} - dx^\mu$
+\\
+$\lambda^mu_{\;\nu} dx^\nu = \delta x^\mu$
+\\
+NOTE:  This jibes with what's late stated in 3.c.  The only thing left to do is check that $dx^{\prime\mu} - dx^\mu$ is an acceptable rendering of $x^{\prime\mu} - x^\mu$
+\\
+\\
+\PRLsep
 \\
 \\
 \textbf{3.b.}
 \\
-Takeno states that the inverse of his small additive element is the subtracted element.  i.e.
+Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transfrome, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$
 \\
-$\omega^{\prime\prime} = \omega + \omega^\prime$
+Keeping in mind that $\Lambda^\nu_{\;\sigma} = \delta\mu_\nu + \lambda^\nu_{\;\sigma}$, show that $\lambda^\nu_{\;\sigma} = -\lambda^\nu_{\;\sigma}$
 \\
-and the inverse element is 
-$U\left(-\omega\right)$
+$\eta_{\mu\nu}\left(\delta\mu_\rho+ \lambda^\mu_{\;\rho}\right)\left(\delta^\nu_\sigma + \lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
 \\
-See equeation 2.1
 \\
-This is reminiscent of the instructions in this part to show that $\lambda_{\mu_\nu} = -\lambda_{\nu_\mu}$
+$\eta_{\mu\nu}\left(\delta^{\mu\nu}_{\rho\sigma} + \delta^\nu_\sigma \lambda^\mu_{\;\rho} + \delta^\mu_rho \lambda^\nu_{\;\sigma} + \lambda^\mu_{\;\rho}\lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
 \\
-First, you'll need 
 \\
-$\eta_{\mu\nu} \Lambda^\mu_{\;\rho} \Lambda^\nu_{\;\sigma} = \eta_{\rho\sigma}$
+The product of two infintesimal $\lambda$s above is taken to be zero.
 \\
-$-\delta_{\mu\nu} = -\lambda^\mu_{\;\nu} x^\nu$
+\\
+$\eta_{\rho\sigma} + \delta^\nu_\sigma \lambda_{\nu\rho} + \delta^\mu_\rho\Lambda_{\mu\sigma} = \eta_{\rho\sigma}$
+\\
+\\
+For the above to evaluate correctly, we must have 
+\\
+$\lambda_{\sigma\rho} - \lambda_{\rho\sigma} = 0$
+\\
+So, 
+\\
+$\lambda_{\sigma\rho} = -\lambda_{\rho\sigma}$
+\\
+\\
+\PRLsep
+\\
+\\
 \textbf{3.c.}
 \\
 Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
@@ -261,430 +289,6 @@ v_1 v_2 + 1 & -v_2 - v_1\\
 They produce the same results and therefore commute.  Since we can always adjust our coordinate system so that the velocities lie along the x axis, this result holds for any direction of velocity as long as both boosts are parallel as stated in the problem.
 \\
 \PRLsep
-\\
-Now, for the fun ways.  The first obvious solution is just to state the four velocity transform we derived in class and in the notes.  We have for the transformation of a velocity $u$ to a frame moving in the same direciton with the velocity $v$ that
-\\
-$u^\prime = \dfrac{u_x - v}{1-u_x v}$
-\\
-\\
-Suppose we had asked a differnt question, what if, of asking what the velocity transforms to in the moving frame, we asked what the velocity is if we boost the particle into the primed frame.  The answer would be
-\\
-$v_{lab} = \dfrac{u_x + v}{1+u_x v}$
-\\
-It is manifest that the expression commutes, and a quick glance ahead to the answer for 2b will show that it matches the clunkier result from working with matrices.
-\\
-\\
-Let's look at it yet another way.  We keep alluding to the fact that Lorentz transforms are rotation in space-time.  Let's see if there's a natural way to actually treat them as such and if so, how that helps.  Again, the  simple place to start is wth the four velocity.
-\\
-\\
-The 0 component of the four velocity is just $\gamma$.  Suppose we didn't set c to 1 in our expressions.  We'd have,
-\\
-\\
-$\gamma = \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}$
-\\
-$= \dfrac{1}{\dfrac{1}{c}\sqrt{c^2 - v^2}}$
-\\
-$= \dfrac{c}{\sqrt{c^2 - v^2}}$
-\\
-\\
-Those familiar with hyperbolic geometry will recognize this as the hyperbolic cosine of an angle where the hyptoenuse is $\sqrt{c^2 - v^2}$ and the adjacent side is $c$.
-\\
-\\
-The space component of four velocity can be written as, (taking a bit more care to place the factors of c back where they go using 7.2 in L\&L),
-\\
-$\gamma v = \dfrac{cv}{\sqrt{c^2 - v^2}} = c\;sinh\left(\phi\right)$
-\\
-\\
-Which is nothing more than a hyperbolic sine times a factor of c.  Here, the opposite side is $v$ and the hyptoenuse is of course the same.
-\\
-\\
-To relate these quantities back to labortory velocity, we'd need to remember that $\gamma = \dfrac{dt}{d\tau}$ and that the spatial portion of four velocity is expressed as $u = \dfrac{d\vec{x}}{d\tau}$.  Now, if we divide the hyperbolic sine by the hyperbolic cosine we get, 
-\\
-\\
-$\dfrac{c\;sinh\left(\phi\right)}{cosh\left(\phi\right)} = \dfrac{d\vec{x}}{d\tau} \dfrac{dt}{d\tau} = \dfrac{d\vec{x}}{dt} = tanh\left(\phi\right)$
-\\
-\\
-Which means that lab velocity can be written as
-\\
-\\
-$\dfrac{v}{c} = tanh\left(\phi\right)$
-\\
-\\
-and our hyperbolic angle can be written as 
-\\
-\\
-$\phi = atanh\left(\dfrac{v}{c}\right)$
-\\
-\\
-We're getting somewhwere, we know that angles in the same plane of a rotaiton simply add.  Can the same thing work here?  We'll have to find out later.
-\\
-\\
-\PRLsep
-\\
-\\
-\textbf{2.b.}
-\\
-Now, we have to show that result above is still a Lorentz boost.
-\\
-Let's suppose it is a Lorentz boost and see if things work out.  We start with
-\\
-$\gamma_1 \gamma_2 
-\begin{pmatrix}
-v_1 v_2 + 1 & -v_2 - v_1\\
--v_1 - v_2 & v_1 v_2 + 1\\
-\end{pmatrix} $
-\\
-which can be rewritten suggestively as
-\\
-$\gamma_3 
-\begin{pmatrix}
-1 & \dfrac{-v_2 - v_1}{v_1 v_2 + 1}\\
-\dfrac{-v_1 - v_2}{v_1 v_2 + 1} & 1\\
-\end{pmatrix} $
-\\
-where 
-\\
-$\gamma_3 = \gamma_1 \gamma_2 \left(v_1 v_2 + 1\right)$
-\\
-It looks like our new velocity should be 
-\\
-$v_3 = \dfrac{v_2 + v_1}{1 + v_1 v_2}$
-\\
-Let's see if this works out in terms of our new gamma.  I'll work with $\gamma^{-1}$ just to avoid working in denominators all day, and then I'll take the reciprocal of the result at the end.
-\\
-\\
-$1 - v_3^2 = 1 - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
-\\
-\\
-Setting terms over the same common denominator we get:
-\\
-\\
-$= \dfrac{1 + 2 v_1 v_2 + v_1^2 v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2} - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
-\\
-\\
-Simplifying gives:
-\\
-\\
-$= \dfrac{1 - v_1^2 - v_2^2 + v_1^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
-\\
-\\
-Taking the square root gives
-\\
-\\
-$\sqrt{1 - v_3^2} = \dfrac{\sqrt{1-v_1^2}\sqrt{1-v_2^2}}{1+ v_1 v_2}$
-\\
-\\
-Taking the reciprocal, we get 
-\\
-\\
-$\gamma_3 = \dfrac{1+ v_1 v_2}{\sqrt{1-v_1^2}\sqrt{1-v_2^2}} = \gamma_1 \gamma_2 \left(1+ v_1 v_2\right)$
-\\
-\\
-which is the gamma factor required for the resultant velocity.
-\\
-\PRLsep
-\\
-\textbf{2.c.}
-\\
-Now we need to show that if the two boosts are in different examples, they do not commute.  we're to use the velocities, $\vec{v_1} = \left(v_1, 0, 0\right)$ and $\vec{v_2} = \left(0, v_2, 0\right)$
-\\
-$\begin{pmatrix}
-\gamma_1 & -\gamma_1 v_1 & 0 & 0\\
--\gamma_1 v_1 & \gamma_1 & 0 & 0\\
-0 & 0 & 1 & 0\\
-0 & 0 & 0 & 1\\
-\end{pmatrix} 
-\begin{pmatrix}
-\gamma_2 & 0 & -\gamma_2 v_2 & 0\\
-0 & 1 & 0 & 0\\
--\gamma_2 v_2 & 0 & \gamma_2 & 0\\
-0 & 0 & 0 & 1\\
-\end{pmatrix} $
-\\
-Now, let's plug results into the resultant transform until something won't commute.  Here's $v_1$ applied to $v_2$.  The reverse set of results follows, although this won't take long.
-\\
-$\begin{pmatrix}
-\gamma_1 \gamma_2 & -\gamma_1 v_1 & .. & ..\\
-.. & .. & .. & ..\\
-.. & .. & .. & ..\\
-.. & .. & .. & ..\\
-\end{pmatrix}$
-\\
-$\begin{pmatrix}
-\gamma_1 \gamma_2 & -\gamma_1 \gamma_2 v_1 & .. & ..\\
-.. & .. & .. & ..\\
-.. & .. & .. & ..\\
-.. & .. & .. & ..\\
-\end{pmatrix}$
-\\
-Hence, it can be seen that the two results are different and the two orders of operations do not commute.
-\\
-\PRLsep
-\\
-\textbf{2.d.}
-\\
-Here we're to carry the multiplication in 2.c. out a bit further and show that not only does the result not commute, but also that it is no longer a pure boost, but also contains a rotation.  The full result of the above multiply is
-\\
-$\begin{pmatrix}
-\gamma_1 & -\gamma_1 v_1 & 0 & 0\\
--\gamma_1 v_1 & \gamma_1 & 0 & 0\\
-0 & 0 & 1 & 0\\
-0 & 0 & 0 & 1\\
-\end{pmatrix} 
-\begin{pmatrix}
-\gamma_2 & 0 & -\gamma_2 v_2 & 0\\
-0 & 1 & 0 & 0\\
--\gamma_2 v_2 & 0 & \gamma_2 & 0\\
-0 & 0 & 0 & 1\\
-\end{pmatrix} = 
-\begin{pmatrix}
-\gamma_1 \gamma_2 & -\gamma_1 v_1 & -\gamma_1 \gamma_2 v_2 & 0\\
--\gamma_1 \gamma_2 v_1 & \gamma_1 & -\gamma_1 \gamma_2 v_1 v_2 & 0\\
--\gamma_2 v_2 & 0 & \gamma_2 & 0\\
-0 & 0 & 0 & 1\\
-\end{pmatrix}$
-\\
-Remember that for a pure boost, the $ij$ terms should look like,
-\\
-$\Lambda^i_{\; j} = \delta_{ij} + \dfrac{\gamma - 1}{v^2} v_i v_j$
-\\
-All of the $ij$ terms break this model, hence we no longer have a pure boost.
-\\
-\PRLsep
-\\
-{\bf 3}\\
-This problem focuses on deriving the Lorentz transform for the $\vec{B}$ field.  First though, here are a few notes.  Let's look at the result we want to get and compare it to the space Lorentz transform.  The general Lorentz transform for space is:
-\\
-$\vec{r}^\prime = \vec{r} + \dfrac{\gamma - 1}{v^2} \left(\vec{v} \cdot \vec{r}\right)\vec{v} - \gamma \vec{v} t$
-\\
-What's going on here is that the portion of the $\vec{r}$ vector parallel to the velocity vector is being subtracted away from the total posiition vector.  
-\\
-$\vec{r} - \dfrac{\left(\vec{v} \cdot \vec{r}\right)\vec{v}}{v^2}$
-\\
-because it is broken with respect the Lorentz transform.  Remember that the portions for the position vector perpendicular to the velocity are unaffected, so they remain untouched.  We then plug back in the Lorentz corrected portion of the position vector.
-\\
-$\gamma \left(\vec{v} \cdot \vec{r}\right)\vec{v}$
-\\
-And, of course, we have the  $\gamma \vec{v} t$ term which reflects the rotation of the space into the time dimension.
-\\
-All in all, we can express the position transform as 
-\\
-$\vec{r}^\prime = \vec{r} - \vec{r}_\parallel + \gamma\vec{r}_\parallel -\gamma\vec{v}t
-\\$
-\\
-Now, let's look at the final result we're shooting for in the $\vec{B}$ field transformation.  From eq. 252 we have
-\\
-$\vec{B}^\prime = \gamma \left(\vec{B} - \vec{v} \times \vec{E}\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v}$
-\\
-This is a little different, first, notice that the untransformed $\vec{B}$ field is now multiplied by $\gamma$.
-\\
-Leaving that aside for the moment, we're still pulling out the broken parallel portion ala 
-\\
-$\gamma\vec{B} - \dfrac{\left(\vec{v} \cdot \vec{B}\right)\vec{v}}{v^2}$
-\\
-Well, sort of, there's still that factor of $\gamma$ there.  Let's try this a different way.  Embrace the gamma and write the first term as a sum of parallel and perpendicular fields.
-\\
-$\gamma\vec{B} = \gamma\vec{B}_\parallel + \gamma\vec{B}_\perp$
-\\
-Now, we see that we're really pulling the transformed parallel portion out while leaving an untransformed version of the parallel portion in...
-\\
-$\gamma\vec{B}_\parallel + \gamma\vec{B}_\perp - \gamma\vec{B}_\parallel + \vec{B}_\parallel$
-\\
-The end result is the original parallel B field with a $\gamma$ adjusted perpendicular portion.
-\\
-$\vec{B}^\prime = \vec{B}_\parallel + \gamma\vec{B}_\perp - \gamma \vec{v} \times \vec{E}$
-\\
-Karapetoff or Sommerfeld mentioned the reason the parallel component of the field cannot be modified, I've simply forgotten.  I'll look it up.
-\\
-Let's take a quick look at the expression for the E field as well and see if it has the properties in regards to it's parallel and perpendicular components.\\
-$\vec{E}^\prime = \gamma \left(\vec{E} + \vec{v} \times \vec{B}\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{E}\right)\vec{v}$
-\\
-This gives,
-\\
-$\vec{E}^\prime = \vec{E}_\parallel + \gamma\vec{E}_\perp + \vec{v} \times \vec{B}$
-\\
-\\
-\PRLsep
-\\
-Now, getting started, with the problem, let's take a look at the done out E field analog from the notes and class.
-\\
-$\dfrac{\gamma^2 - \gamma}{v^2}V_i v_k E_k - \dfrac{\gamma^2 v^2 v_i v_k E_k}{v^2}$
-\\
-$\dfrac{\gamma^2 - \gamma^2 v^2 - \gamma}{v^2} =  v_i v_k E_k$
-\\
-Which goes to 
-\\
-$\gamma^2\left(\dfrac{1 - v^2}{v^2}\right) \rightarrow \left(\dfrac{1}{v^2} - \dfrac{\gamma}{v^2}\right)v_i v_k E_k$
-\\
-$ = \left[\dfrac{\gamma - 1}{v^2} v_i v_k E_k\right]$
-\\
-Keeping in mind for the steps above that 
-$\dfrac{1 - v^2}{v^2} = \gamma^{-2} v^{-2}$
-\\
-The final result is equivalent to 
-\\
-$- \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{E}\right)\vec{v}$
-\\
-This leaves only the first group of terms to work on, ... but do we care?  Sort of because it will document a useful identity.
-\\
-$\gamma v_k \delta_{il} \epsilon_{klm} B_m + \gamma v_k \dfrac{\gamma - 1}{^2} v_i v_l \epsilon_{klm} B_M$
-\\
-The first term of which becomes 
-\\
-$-\gamma v_k \delta_{il} \epsilon_{klm} B_m = \gamma v_k \epsilon_{kim} B_m = -\gamma v_k \epsilon_{ikm} B_m$
-\\
-Looking at the remaining term, is it possible that it's 0?
-\\
-$\gamma v_k \dfrac{\gamma - 1}{v^2} v_i v_l \epsilon_{klm} B_m$
-I have another method that doesn't quite make sense to me, but here's the one making use of vectors that does.
-\\
-$ =\gamma \dfrac{\gamma - 1}{v^2} v_i v_l \epsilon_{klm} v_k B_m$
-\\
-$ =\gamma \dfrac{\gamma - 1}{v^2} v_i v_l \left(\vec{v} \times \vec{B}\right)_l$
-\\
-$ =\gamma \dfrac{\gamma - 1}{v^2} v_i \vec{v} \cdot \left(\vec{v} \times \vec{B}\right)$
-\\
-Since the last expression is the dot product of the velocity vector and a cross product with the velocity vector as one of its operands, then the dot product is, by definition, between two orthogonal vectors, and is zero.
-\\
-\\
-Now that we've rehashed the warmup work from class, let's show how to tranform the $B$ field.
-\\
-$F^{\prime ij} = \lambda^i_{\;\rho} \Lambda^j_{\;\sigma}F^{\rho\sigma}$
-\\
-$ = \lambda^i_{\;0} \Lambda^j_{\;0} F^{00} + \lambda^i_{\;k} \Lambda^j_{\;l} F^{kl} + \lambda^i_{\;0} \Lambda^j_{\;l} F^{0l} + \lambda^i_{\;k} \Lambda^j_{\;0} F^{k0}$
-\\
-The first term is zero because $F^{\mu\nu}$ is antisymmetric.  This leaves
-\\
-$ = \left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right) \left(\dfrac{\gamma - 1}{v^2} v_i v_l + \delta_{il}\right)\epsilon_{klm} B_m -\gamma v_i \left(\dfrac{\gamma - 1}{v^2} v_j v_l + \delta_{jl}\right)E_l + \gamma v_j \left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right)E_k$
-\\
-\\
-We'll deal with Kronecker delta terms of the last two terms containing the electric field $E$ first.
-\\
-$= -\gamma\left(v_i \delta_{jl} E_l - v_j \delta_{ik} E_k\right)$
-\\
-$= -\gamma\left(v_i E_j - v_j E_i\right) = -\gamma\left(\vec{v} \times \vec{E} \right)_k$
-\\
-If we stop one operation short above, we have an answer in terms of $i$ and $j$ which is what we need.
-\\
-\\
-Getting back to the non-Kronecker delta terms of the $E$ field terms we have,
-\\
-$-\gamma v_i v_j v_l \left(\dfrac{\gamma - 1}{v^2}\right) E_l + \gamma v_j v_i v_k \left(\dfrac{\gamma - 1}{v^2}\right) E_k$
-\\
-The key here is to recognize the dot product of $\vec{E}$ with $\vec{v}$ in each term.  We wind up subtracting the same two terms from each other resulting in zero.
-\\
-Now, let's bludgeon our way through the first term involving $B_m$.
-\\
-$\left(\dfrac{\gamma - 1}{v^2} v_i v_k + \delta_{ik}\right) \left(\dfrac{\gamma - 1}{v^2} v_j v_l + \delta_{jl}\right)\epsilon_{klm} B_m $
-\\
-$= \left(\left(\dfrac{\gamma - 1}{v^2}\right)^2v_i v_k v_j v_l + \delta_{ik} \left(\dfrac{\gamma - 1}{v^2}\right) v_j v_l + \delta_{ik}\delta_{jl} + \delta_{jl} \left(\dfrac{\gamma - 1}{v^2}\right) v_i v_k \right)\epsilon_{klm}B_m$
-\\
-The first term contains a dot product of a $v$ vector and the cross product of $\vec{v} \times \vec{B}$ perpendicular to it, so it's zero.
-\\
-The third term simplifies to 
-\\
-$\delta_{ik}\delta_{jl}\epsilon_{klm} B_m = \epsilon_{ijm}B_m$
-\\
-Keep in mind here that we're actually solving for the transform of $F^\prime_{ij} = \epsilon_{ijk} B_k$ and so, this looks good.
-\\
-the last set of terms to work with are 
-\\
-$\left(\dfrac{\gamma - 1}{v^2}\right) \left(\delta_{ik}v_j v_l + \delta_{jl} v_i v_k\right) \epsilon_{klm} B_m$
-\\
-$= \left(\dfrac{\gamma - 1}{v^2}\right) \left(\epsilon_{ilm}v_j v_l + \epsilon_{kjm} v_i v_k\right) \epsilon_{klm} B_m$
-\\
-This can be written as 
-\\
-$= \left(\dfrac{\gamma - 1}{v^2}\right)\left(v_j\left(\vec{v} \times \vec{B}\right)_i - v_i \left(\vec{v} \times \vec{B}\right)_j\right)$
-\\
-Which is the same as 
-\\
-$-\left(\dfrac{\gamma - 1}{v^2}\right)\left(\vec{v} \times \left(\vec{v} \times \vec{B} \right) \right)_k$
-\\
-By a vector identity, we get
-\\
-$= -\left(\dfrac{\gamma - 1}{v^2}\right)\left(\vec{v}\left(\vec{v} \cdot \vec{B} \right) - |v^2| \vec{B}\right)$
-\\
-Simplifying:
-\\
-$-\left(\dfrac{\gamma - 1}{v^2}\right) \vec{v}\left(\vec{v} \cdot \vec{B} \right) + \dfrac{v^2\left(\gamma - 1\right)}{v^2} \vec{B}$
-\\
-$=-\left(\dfrac{\gamma - 1}{v^2}\right) \left(\vec{v} \cdot \vec{B} \right)\vec{v} + \left(\gamma - 1\right) \vec{B}$
-\\
-\\
-Now, for the grand finale bringing in all the terms, and transforming to vector notation at once, we get
-$\vec{B^\prime} = \vec{B} - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v} + \left(\gamma - 1\right)\vec{B} - \gamma \left(\vec{v} \times \vec{E}\right)$
-\\
-$= \gamma\left(\vec{B} - \left(\vec{v} \times \vec{E}\right)\right) - \dfrac{\gamma - 1}{v^2}\left(\vec{v} \cdot \vec{B}\right)\vec{v}$
-\\
-\PRLsep
-\\
-\textbf{4.a.}
-\\
-Given:
-\\
-$R^2 = \eta_{\mu\nu} x^\mu x^\nu$
-\\\\
-We want to show that 
-\\
-\\
-$\partial_\mu R = \dfrac{\eta_{\mu\nu}}{R}$
-\\
-The solution is based on the similar 3 space problem.  I'll include a bit more detail here.  Start with
-\\
-$\partial_\mu R^2 = 2R \partial_\mu R = 2R R^{-1} \frac{1}{2} 2 \eta_{\mu\nu} x^\nu$
-\\
-The first step comes from the chain rule, the next step comes from treating $R$ as 
-\\
-$R = \sqrt{\eta_{\mu\nu} x^\mu x^\nu}$
-\\
-keeping in mind that the $\eta_{\mu\nu}$ only evaluates when the indices are equal.  Applying the chain rule to the result of the first step gives us back half of aan inverted version of $R$ and the Minkowski-esque sum of all four of the $x^\mu$ internal to the square root, which gives us the $2\eta_{\mu\nu}x^\nu$ piece of the result.  In any event, this can be rearranged to give
-\\
-$2R\partial_\mu R = 2 \eta_{\mu\nu} x^\nu $
-\\
-and finally
-\\
-$\partial_\mu R = \dfrac{\eta_{\mu\nu} x^\nu}{R} $
-\\
-\PRLsep
-\\
-\textbf{4.b.}
-\\
-Now, we need to show that 
-\\
-$\Box \dfrac{1}{R^2} = 0$
-\\
-We'll work from the 3 vector example again.  Just as before, the trick here is to do the derivatives one at a time, keeping things in index notation and look for things to cancel out.  We'll need to keep the result from 4a in mind.  I'll write it both ways so it will be handy when necessary,
-\\
-$\partial_\mu R = \dfrac{\eta_{\mu\nu} x^\nu}{R}$
-\\
-and
-\\
-$\partial_\nu R = \dfrac{\eta_{\mu\nu} x^\mu}{R}$
-\\
-Here we go,
-\\
-$\Box \dfrac{1}{R^2} = $
-\\
-We use our previous result and the chain rule to get
-\\
-$\Box \dfrac{1}{R^2} = \eta^{\mu\nu}\partial_\mu \partial_\nu\left(\dfrac{1}{R^2}\right) = \eta^{\mu\nu}\partial_\mu\left(-2 R^{-3} \dfrac{\eta_{\mu\nu}x^\mu}{R}\right) = \eta^{\mu\nu}\partial_\mu\left(-2 \dfrac{\eta_{\mu\nu} x^\mu}{R^4}\right)$
-\\
-The chain rule and the previous result was used to perform the first derivative above.  Now, since $\eta^{\mu\nu}$ is a constant, we can pull it outside the second derivative and cancel it leaving
-\\
-$ = \partial_\mu\left(-2 \dfrac{x^\mu}{R^4}\right)$
-\\
-Utilizing the chain rule along with the product rule we get,
-\\
-$ = 8 \dfrac{x^\nu}{R^5}\dfrac{\eta_{\mu\nu} x^\mu}{R} - \dfrac{2}{R^4} 4 = 0$
-\\
-Remember that similarly to the three vector case, we have 
-\\
-$\partial_\mu x^\nu = 4$,
-\\
-and that
-\\
-$R^2 = \eta_{\mu\nu}x^\mu x^\nu$
 
 
 
