@@ -124,7 +124,6 @@ This proves that $U$ transforms as a four-vector, and is in fact a four-vector.
 \\
 \PRLsep
 \\
-\\
 \textbf{1.b.}
 \\
 First, even though, they're not required, a few notes on swapping dummy indices up and down.  As it turns out,
@@ -246,50 +245,90 @@ $\lambda_{\sigma\rho} = -\lambda_{\rho\sigma}$
 \PRLsep
 \\
 \\
+\newpage
 \textbf{3.c.}
 \\
 Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
 \\
-$\Lambda^i_{\; j} = \delta_{ij} + \dfrac{\gamma - 1}{v^2} v_i v_j$
 \\
-We'll need this for part 2.d. if not sooner
+Given that $M_{\mu\nu}$ is defined as 
 \\
-$\begin{pmatrix}
-\gamma_1 & -\gamma_1 v_1\\
--\gamma_1 v_1 & \gamma_1\\
-\end{pmatrix} 
-\begin{pmatrix}
-\gamma_2 & -\gamma_2 v_2\\
--\gamma_2 v_2 & \gamma_2\\
-\end{pmatrix} $
+$M_{\mu\nu} x_\mu\partial_\nu - x_\nu partial_\mu$
 \\
-$  = \gamma_1 \gamma_2 
-\begin{pmatrix}
-v_1 v_2 + 1 & -v_2 - v_1\\
--v_1 - v_2 & v_1 v_2 + 1\\
-\end{pmatrix} $
+Show that 
 \\
-Now, if we just bludgeon through we get
+$\dfrac{1}{2} M_{\rho\sigma}\left(x^\mu\right) = -\lambda^\mu_{\;\nu} x^\nu = -\delta x^\mu$
 \\
-$\begin{pmatrix}
-\gamma_2 & -\gamma_2 v_2\\
--\gamma_2 v_2 & \gamma_2\\
-\end{pmatrix} 
-\begin{pmatrix}
-\gamma_1 & -\gamma_1 v_1\\
--\gamma_1 v_1 & \gamma_1\\
-\end{pmatrix} $
+First, write out $M_{\rho\sigma}\left(x^\mu\right)$
 \\
-$  = \gamma_1 \gamma_2 
-\begin{pmatrix}
-v_1 v_2 + 1 & -v_2 - v_1\\
--v_1 - v_2 & v_1 v_2 + 1\\
-\end{pmatrix} $
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_sigma x^\mu - x_\sigma \partial_rho x^\mu\right)$
 \\
-They produce the same results and therefore commute.  Since we can always adjust our coordinate system so that the velocities lie along the x axis, this result holds for any direction of velocity as long as both boosts are parallel as stated in the problem.
+then, evaluate the partial derivatives
+\\
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho delta^\mu_\sigma - x_\sigma \delta^\mu_\rho\right)$
+\\
+Multiply the common actor back in
+$\dfrac{1}{2}\lambda^{\rho\mu} x_\rho - \lambda^{\mu\sigma} x_\sigma$
+\\
+$= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \lambda^{\mu\sigma}x_\sigma$
+\\
+Which, from the anti-symmetry of $\lambda_{\mu\nu}$ shown above, produces
+\\
+$=\dfrac{1}{2}2\lambda^{\sigma\mu} x_\sigma$
+\\
+$=-\lambda^{\mu\sigma} x_\sigma$
+\\
+We can always swap the vertical positions of the dummy indices.
+\\
+$=-\lambda^mu_{\;\sigma} x^\sigma = -\delta x^\sigma$
+\\
+The last equality is demonstrated in 3.a. above.
+\\
 \\
 \PRLsep
-
+\\
+\\
+\newpage
+\textbf{3.d.}
+\\
+Show that $M_{\mu\nu}$ obeys the algebra, 
+$\left[M_{\mu\nu}, M_{\rho\sigma}\right] = eta_{\nu\rho}M_{\mu\sigma} - eta_{\mu\rho}M_{\nu\sigma} + eta_{\mu\sigma}M_{\nu\rho} - eta_{\nu\sigma}M_{\mu\rho}$
+\\
+Do the obvious thing and evaluate the commutator which will give 8 terms.
+\\
+$\left(x_\mu \partial_\nu - x_\nu \partial_\mu\right)\left(x_\rho \partial_\sigma - x_\sigma \partial_\rho\right)$
+\\
+The resulting 8 terms are listed and simplified below
+\\
+1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma$
+\\
+The above uses the identity $U_\mu = \eta_{\mu\nu}U^\nu$.  Note that the dummy index goes to the rigth on the $\eta$.
+\\
+Getting started with number 1 again, we have,
+\\
+1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma = x_\mu \delta_\nu^\alpha \eta_{\rho\alpha} = x_\mu \eta_{\rho\nu} \partial_\sigma = \eta_{\rho\nu} x_\mu \partial_\sigma$
+\\
+The remaining seven terms will be written out following the example of the first term
+\\
+2.  $-x_\nu \partial_\mu x_\rho \partial_\sigma = \eta_{\rho\mu} x_\nu \partial_sigma$
+\\
+3.  $x_\nu \partial_\mu x_\sigma \partial_\rho = \eta_{\sigma\mu} x_\nu \partial_\rho$
+\\
+4.  $-x_\mu \partial_\nu x_\sigma \partial_\rho = \eta_{\sigma\nu} x_\mu \partial_\rho$
+\\
+5.  $x_\rho \partial_\sigma x_\mu \partial_\nu = \eta_{\mu\sigma} x_\rho \partial_\nu$
+\\
+6.  $x_\rho \partial_\sigma x_\nu \partial_\mu = \eta_{\nu\sigma} x_\rho \partial_\mu$
+\\
+7.  $-x_\sigma \partial_\rho x_\nu \partial_\mu = \eta_{\nu\rho} x_\sigma \partial_\mu$
+\\
+8.  $x_\sigma \partial_\rho x_\mu \partial_\nu = \eta_{\mu\rho} x_\sigma \partial_\nu$
+\\
+Rearraning terms, grouping, and adding, we see that we can get the desired result by the sum of grouped terms, 
+\\
+(1 and 7) + (2 and 8) + (3 and 5) + (4 and 6)
+\\
+$\eta_{\nu\rho}M_{\mu\sigma} - \eta_{\mu\rho}M_{\nu\sigma} + \eta_{\mu\sigma}M_{\nu\rho} - \eta_{\nu\sigma}M_{\nu\rho}$
 
 
 
