@@ -128,19 +128,19 @@ This proves that $U$ transforms as a four-vector, and is in fact a four-vector.
 \\
 First, even though, they're not required, a few notes on swapping dummy indices up and down.  As it turns out,
 \\
-$B^\mu A_mu = B_mu A^mu$
+$B^\mu A_\mu = B_\mu A^\mu$
 \\
 Here's why.  We can write $A_mu$ as
 \\
-$A_mu = \eta_{\mu\rho}A^\rho$
+$A_\mu = \eta_{\mu\rho}A^\rho$
 \\
 Now we have
 \\
-$B^\mu A_mu = B^\mu \eta_{\mu\rho} A^\rho$
+$B^\mu A_\mu = B^\mu \eta_{\mu\rho} A^\rho$
 \\
-$B^\mu A_mu = \eta_{\mu\rho} B^\mu A^\rho$
+$B^\mu A_\mu = \eta_{\mu\rho} B^\mu A^\rho$
 \\
-$B^\mu A_mu = B_\mu A^\rho$
+$B^\mu A_\mu = B_\mu A^\rho$
 \\
 \\
 The actual problem to be worked is to show that
@@ -171,13 +171,13 @@ $k^\mu V_\mu = 0 = k^\mu k_\mu$
 \\
 from the fact that $k_\mu$ is null.
 \\
-$k^\mu v_\mu - k^mu k_\mu = 0$
+$k^\mu V_\mu - k^mu k_\mu = 0$
 \\
 $k^\mu\left(V_\mu - k_\mu\right) = 0$
 \\
 $V_\mu - k_\mu = 0$
 \\
-$v_\mu = k_\mu$
+$V_\mu = k_\mu$
 \\
 \\
 This, however gives a particular answer, and not the general answer.  For the general answer, let's take a look at a 3+1 split of $k^\mu$.  The product $k^\mu k_\mu = 0$ evaluates to 
@@ -237,27 +237,17 @@ express $\delta x^\mu = x^{\prime\mu} - x^\mu$ in terms of $\lambda^\mu_{\;\nu}$
 \\
 We know that 
 \\
-$\Lambda^\mu_{\;\nu} = \dfrac{dx^{\prime\mu}}{dx^\nu}$
+$x^{\prime\mu} = \Lambda^\mu_{\;\nu} x^\nu$
 \\
-So, a small change in $dx^\nu$ results in 
+Then,
 \\
-$dx^\nu \Lambda^\mu_{\;\nu} = dx^{\prime \mu}$
+$x^{\prime\mu} = x^\nu\left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right) $
 \\
-$dx^\nu\left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right) = dx^{\prime\mu}$
+$x^{\prime\mu} = \delta^\mu_\nu x^\nu + \lambda^\mu_{\;\nu}x^\nu $
 \\
-Where the above substitutes the defition of the incremental Lorentz transform,
+$x^{\prime\mu} = x^\mu + \lambda^\mu_{\;\nu}x^\nu $
 \\
-$\Lambda^\mu_{\;\nu} = \left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right)$
-\\
-$\delta_\nu^\mu dx^\nu + dx^\nu lambda^\mu_{\;\nu} = dx^{\prime\mu}$
-\\
-$dx^=mu + \lambda^\mu_{\;\nu} dx^\nu = dx^{\prime\mu}$
-\\
-$\lambda^\mu_{\;\nu}dx^\nu = dx^{\prime\mu} - dx^\mu$
-\\
-$\lambda^mu_{\;\nu} dx^\nu = \delta x^\mu$
-\\
-NOTE:  This jibes with what's late stated in 3.c.  The only thing left to do is check that $dx^{\prime\mu} - dx^\mu$ is an acceptable rendering of $x^{\prime\mu} - x^\mu$
+$x^{\prime\mu} - x^\mu = \delta x^\mu = \lambda^\mu_{\;\nu}x^\nu $
 \\
 \\
 \PRLsep
