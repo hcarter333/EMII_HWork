@@ -189,8 +189,6 @@ $\left(k_0 k_0\right) = \left(k_1^2 + k_2^2 + k_3^2\right)$
 \\
 Meaning that the time coordinate must be equal to the usual Pythagorean magnitude for the space components' line segment.  We can exploit the symmetry of the situation to make things even simpler.  Rotate the spatial coordinate system so that the space component of our vector lies entirely on the x axis, we get for the general case with $V_\mu$
 \\
-NOTE:  come back and show that $k^\mu$ must be the equivalent of a 45 degree vector first.  This is where you'll use the non-spacelike condition... Sort of.
-\\
 \\
 $-\left(k_0 V^0\right) + \left(k_1 V^1\right) = 0$
 \\
@@ -199,7 +197,7 @@ If we back up and describe the same situation in the x-t coordinates for $k^\mu 
 \\
 $\left(k_0 k_0\right) = \left(k_1^2\right)$
 \\
-and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component was pointed in, it could hae been rotated onto the x-axis in this 3+1 treatment.
+and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component was pointed in, it could have been rotated onto the x-axis in this 3+1 treatment.
 \\
 Returning to the general case, we had 
 \\
@@ -253,22 +251,26 @@ $x^{\prime\mu} - x^\mu = \delta x^\mu = \lambda^\mu_{\;\nu}x^\nu $
 \PRLsep
 \\
 \\
+\newpage
 \textbf{3.b.}
 \\
 Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transfrome, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$
 \\
 Keeping in mind that $\Lambda^\nu_{\;\sigma} = \delta\mu_\nu + \lambda^\nu_{\;\sigma}$, show that $\lambda^\nu_{\;\sigma} = -\lambda^\nu_{\;\sigma}$
 \\
-$\eta_{\mu\nu}\left(\delta\mu_\rho+ \lambda^\mu_{\;\rho}\right)\left(\delta^\nu_\sigma + \lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+$\eta_{\mu\nu}\left(\delta^\mu_\rho+ \lambda^\mu_{\;\rho}\right)\left(\delta^\nu_\sigma + \lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
 \\
 \\
-$\eta_{\mu\nu}\left(\delta^{\mu\nu}_{\rho\sigma} + \delta^\nu_\sigma \lambda^\mu_{\;\rho} + \delta^\mu_rho \lambda^\nu_{\;\sigma} + \lambda^\mu_{\;\rho}\lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+$\eta_{\mu\nu}\left(\delta^{\mu\nu}_{\rho\sigma} + \delta^\nu_\sigma \lambda^\mu_{\;\rho} + \delta^\mu_\rho \lambda^\nu_{\;\sigma} + \lambda^\mu_{\;\rho}\lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
 \\
 \\
 The product of two infintesimal $\lambda$s above is taken to be zero.
 \\
 \\
 $\eta_{\rho\sigma} + \delta^\nu_\sigma \lambda_{\nu\rho} + \delta^\mu_\rho\Lambda_{\mu\sigma} = \eta_{\rho\sigma}$
+\\
+\\
+$\eta_{\rho\sigma} + \lambda_{\sigma\rho} + \lambda_{\rho\sigma} = \eta_{\rho\sigma}$
 \\
 \\
 For the above to evaluate correctly, we must have 
@@ -291,7 +293,7 @@ Notes on how to approach the problem.  Notice that the experssion in 3.c. comes 
 \\
 Given that $M_{\mu\nu}$ is defined as 
 \\
-$M_{\mu\nu} x_\mu\partial_\nu - x_\nu partial_\mu$
+$M_{\mu\nu} = x_\mu\partial_\nu - x_\nu\partial_\mu$
 \\
 Show that 
 \\
@@ -299,14 +301,13 @@ $\dfrac{1}{2} M_{\rho\sigma}\left(x^\mu\right) = -\lambda^\mu_{\;\nu} x^\nu = -\
 \\
 First, write out $M_{\rho\sigma}\left(x^\mu\right)$
 \\
-$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_sigma x^\mu - x_\sigma \partial_rho x^\mu\right)$
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_\sigma x^\mu - x_\sigma \partial_\rho x^\mu\right)$
 \\
 then, evaluate the partial derivatives
 \\
-$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho delta^\mu_\sigma - x_\sigma \delta^\mu_\rho\right)$
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \delta^\mu_\sigma - x_\sigma \delta^\mu_\rho\right)$
 \\
-Multiply the common actor back in
-$\dfrac{1}{2}\lambda^{\rho\mu} x_\rho - \lambda^{\mu\sigma} x_\sigma$
+Multiply the common factor back in
 \\
 $= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \lambda^{\mu\sigma}x_\sigma$
 \\
@@ -318,7 +319,7 @@ $=-\lambda^{\mu\sigma} x_\sigma$
 \\
 We can always swap the vertical positions of the dummy indices.
 \\
-$=-\lambda^mu_{\;\sigma} x^\sigma = -\delta x^\sigma$
+$=-\lambda^\mu_{\;\sigma} x^\sigma = -\delta x^\sigma$
 \\
 The last equality is demonstrated in 3.a. above.
 \\
@@ -348,7 +349,7 @@ Getting started with number 1 again, we have,
 \\
 The remaining seven terms will be written out following the example of the first term
 \\
-2.  $-x_\nu \partial_\mu x_\rho \partial_\sigma = \eta_{\rho\mu} x_\nu \partial_sigma$
+2.  $-x_\nu \partial_\mu x_\rho \partial_\sigma = \eta_{\rho\mu} x_\nu \partial_\sigma$
 \\
 3.  $x_\nu \partial_\mu x_\sigma \partial_\rho = \eta_{\sigma\mu} x_\nu \partial_\rho$
 \\
