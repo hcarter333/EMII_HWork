@@ -154,9 +154,9 @@ $S_{\nu\mu} = W_{\nu\rho}W_\mu^{\;\;\rho}$
 \\
 But, this isn't the same as the original expression yet, so we swap our dummy indices up and down to get 
 \\
-$S_{\nu\mu} = W_{\nu}^{\;\;\rho}W_\mu\rho$
+$S_{\nu\mu} = W_{\nu}^{\;\;\rho}W_{\mu\rho}$
 \\
-$= W_\mu\rho W_{\nu}^{\;\;\rho}$
+$= W_{\mu\rho} W_{\nu}^{\;\;\rho}$
 \\
 Which is identical to the original expression for $S_{\mu\nu}$ demonstrating symmetry.
 \\
@@ -197,7 +197,7 @@ If we back up and describe the same situation in the x-t coordinates for $k^\mu 
 \\
 $\left(k_0 k_0\right) = \left(k_1^2\right)$
 \\
-and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component was pointed in, it could have been rotated onto the x-axis in this 3+1 treatment.
+and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component of $k^\mu$ was pointed in, it could have been rotated onto the x-axis in this 3+1 treatment.
 \\
 Returning to the general case, we had 
 \\
@@ -213,11 +213,11 @@ $V^\mu V_\mu \leq 0$
 \\
 This can be expanded to give 
 \\
-$-\left(v_0^2\right) + \left(V_1^2 + v_2^2 + v_3^2\right) \leq 0$
+$-\left(V_0^2\right) + \left(V_1^2 + V_2^2 + V_3^2\right) \leq 0$
 \\
 We already know that $V_0 = V_1$ so
 \\
-$v_2^2 + v_3^2 \leq 0$
+$V_2^2 + V_3^2 \leq 0$
 \\
 $V_2^2 \geq 0$ and $V_3^2 \geq 0$ so,
 \\
@@ -254,7 +254,7 @@ $x^{\prime\mu} - x^\mu = \delta x^\mu = \lambda^\mu_{\;\nu}x^\nu $
 \newpage
 \textbf{3.b.}
 \\
-Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transfrome, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$
+Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transform, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$.
 \\
 Keeping in mind that $\Lambda^\nu_{\;\sigma} = \delta\mu_\nu + \lambda^\nu_{\;\sigma}$, show that $\lambda^\nu_{\;\sigma} = -\lambda^\nu_{\;\sigma}$
 \\
@@ -288,7 +288,7 @@ $\lambda_{\sigma\rho} = -\lambda_{\rho\sigma}$
 \newpage
 \textbf{3.c.}
 \\
-Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
+Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$ looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
 \\
 \\
 Given that $M_{\mu\nu}$ is defined as 
@@ -299,7 +299,7 @@ Show that
 \\
 $\dfrac{1}{2} M_{\rho\sigma}\left(x^\mu\right) = -\lambda^\mu_{\;\nu} x^\nu = -\delta x^\mu$
 \\
-First, write out $M_{\rho\sigma}\left(x^\mu\right)$
+First, write out $\frac{1}{2}M_{\rho\sigma}\left(x^\mu\right)$
 \\
 $\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_\sigma x^\mu - x_\sigma \partial_\rho x^\mu\right)$
 \\
@@ -309,11 +309,11 @@ $\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \delta^\mu_\sigma - x_\sigma \delt
 \\
 Multiply the common factor back in
 \\
-$= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \lambda^{\mu\sigma}x_\sigma$
+$= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \dfrac{1}{2}\lambda^{\mu\sigma}x_\sigma$
 \\
 Which, from the anti-symmetry of $\lambda_{\mu\nu}$ shown above, produces
 \\
-$=\dfrac{1}{2}2\lambda^{\sigma\mu} x_\sigma$
+$=\lambda^{\sigma\mu} x_\sigma$
 \\
 $=-\lambda^{\mu\sigma} x_\sigma$
 \\
