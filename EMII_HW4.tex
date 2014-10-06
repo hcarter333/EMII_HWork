@@ -1,0 +1,426 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Homework IV Due 2014/10/08}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+\textbf{1}
+\\
+Write the Lorentz force equation $m \frac{d^2 x^\mu}{d\tau^2} = e F^\mu_{\;\nu} \frac{d x^\nu}{d\tau}$ as a matrix equation, where $F$ and $X$ are 
+\\
+$F = \begin{pmatrix}
+F^0_{\;0} & F^0_{\;1} & F^0_{\;2} & F^0_{\;3}\\
+F^1_{\;0} & F^1_{\;1} & F^1_{\;2} & F^1_{\;3}\\
+F^2_{\;0} & F^2_{\;1} & F^2_{\;2} & F^2_{\;3}\\
+F^3_{\;0} & F^3_{\;1} & F^3_{\;2} & F^3_{\;3}\\
+\end{pmatrix} $, 
+$X = \begin{pmatrix}
+x^0\\
+x^1\\
+x^2\\
+x^3\\
+\end{pmatrix} $
+\\
+\\
+Obtain the general solution for $X\left(\tau\right)$ as a simple matrix expression.
+\\
+\\
+First, we can write the Lorentz force expression in matrix form,
+\\
+\\
+$m \dfrac{d^2 X}{d\tau^2} = e F \dfrac{dX}{d\tau}$.
+\\
+\\
+Then, we integrate with respect to $\tau$ once to get,
+\\
+\\
+$\dfrac{d X}{d\tau} = \dfrac{e F}{m} X\left(\tau\right) + C$.
+\\
+\\
+Where $C$ are initial conditions with units of proper velocity
+\\
+The solution we'll try is an ansatz of the form 
+\\
+\\
+$X\left(\tau\right) = e^{\frac{e}{m}F\tau}X\left(0\right)$
+\\
+\\
+Where, $X\left(0\right)$ is the intial state of the position matrix $X$.  
+\\
+\\
+To check the solution, we'll make use of the definition of exponentiation for a matrix given in the assignment:
+\\
+\\
+$e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F^0 + \dfrac{\tau}{1}\dfrac{e}{m}A^1 + \dfrac{\tau}{2!}\left(\dfrac{e}{m}A\right)^2 + ...$
+\\
+\\
+When we take the derivvatviie of the expression, since $\dfrac{e}{m}F$ is not a function of $\tau$, we get
+\\
+\\
+$\dfrac{d}{d\tau} e^{A\tau} = \left(0 + \dfrac{t}{1!}\dfrac{e}{m}F + \dfrac{2t^2}{2!}\left(\dfrac{e}{m}F\right)^2 + \dfrac{3t^3}{3!}\left(\dfrac{e}{m}F\right)^2\right)\dfrac{e}{m}F$
+\\
+\\
+$\dfrac{d}{d\tau} e^{\frac{e}{m}F} = \dfrac{e}{m}F\;e^{\frac{e}{m}F}$ 
+\\
+\\
+\PRLsep
+\\
+\textbf{1.b.}
+\\
+First, even though, they're not required, a few notes on swapping dummy indices up and down.  As it turns out,
+\\
+$B^\mu A_\mu = B_\mu A^\mu$
+\\
+Here's why.  We can write $A_mu$ as
+\\
+$A_\mu = \eta_{\mu\rho}A^\rho$
+\\
+Now we have
+\\
+$B^\mu A_\mu = B^\mu \eta_{\mu\rho} A^\rho$
+\\
+$B^\mu A_\mu = \eta_{\mu\rho} B^\mu A^\rho$
+\\
+$B^\mu A_\mu = B_\mu A^\rho$
+\\
+\\
+The actual problem to be worked is to show that
+\\
+$S_{\mu\nu} = W_{\mu\rho}W_\nu^{\;\;\rho}$
+\\
+is symmetric
+\\
+First, we permute indices to get
+$S_{\nu\mu} = W_{\nu\rho}W_\mu^{\;\;\rho}$
+\\
+But, this isn't the same as the original expression yet, so we swap our dummy indices up and down to get 
+\\
+$S_{\nu\mu} = W_{\nu}^{\;\;\rho}W_{\mu\rho}$
+\\
+$= W_{\mu\rho} W_{\nu}^{\;\;\rho}$
+\\
+Which is identical to the original expression for $S_{\mu\nu}$ demonstrating symmetry.
+\\
+\PRLsep
+\\
+\\
+\textbf{2}
+\\
+If a four-vector is timelike then $V^\mu V_\mu < 0$.  If it's spacelike then $V^\mu V_\mu > 0 $.  Lightlike vectors have $V^\mu V_\mu = 0$.  Suppose $k_\mu$ is a null vector.  Show that if a non-spacelike vector, $V^\mu$ is orthogonal to $k^\mu$ i.e. $k^\mu V_\mu = 0$ then $V^\mu$ is a multiple of $k^\mu$.
+\\
+$k^\mu V_\mu = 0 = k^\mu k_\mu$
+\\
+from the fact that $k_\mu$ is null.
+\\
+$k^\mu V_\mu - k^mu k_\mu = 0$
+\\
+$k^\mu\left(V_\mu - k_\mu\right) = 0$
+\\
+$V_\mu - k_\mu = 0$
+\\
+$V_\mu = k_\mu$
+\\
+\\
+This, however gives a particular answer, and not the general answer.  For the general answer, let's take a look at a 3+1 split of $k^\mu$.  The product $k^\mu k_\mu = 0$ evaluates to 
+\\
+$k^\mu k_\mu = -\left(k_0 k_0\right) + \left(k_1^2 + k_2^2 + k_3^2\right)$
+\\
+For this to evaulate to zero, we must have 
+$\left(k_0 k_0\right) = \left(k_1^2 + k_2^2 + k_3^2\right)$
+\\
+Meaning that the time coordinate must be equal to the usual Pythagorean magnitude for the space components' line segment.  We can exploit the symmetry of the situation to make things even simpler.  Rotate the spatial coordinate system so that the space component of our vector lies entirely on the x axis, we get for the general case with $V_\mu$
+\\
+\\
+$-\left(k_0 V^0\right) + \left(k_1 V^1\right) = 0$
+\\
+\\
+If we back up and describe the same situation in the x-t coordinates for $k^\mu k_\mu$, we see that 
+\\
+$\left(k_0 k_0\right) = \left(k_1^2\right)$
+\\
+and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component of $k^\mu$ was pointed in, it could have been rotated onto the x-axis in this 3+1 treatment.
+\\
+Returning to the general case, we had 
+\\
+$\left(k_0 V^0\right) = \left(k_1 V^1\right)$, 
+\\
+but we've just shown that $k_0$ must equal $k_1$, so we now have, 
+\\
+$\left(k_0 V^0\right) = \left(k_0 V^1\right)$, 
+\\
+and $V^0$ must equal $V^1$.  Because the components are equal in magnitude.  We still don't know anything about the other two components of $V^\mu$ though.  Here's where we finally use the non-spacelike condiction of $V^\mu$.  If we write the condition out, we have 
+\\
+$V^\mu V_\mu \leq 0$
+\\
+This can be expanded to give 
+\\
+$-\left(V_0^2\right) + \left(V_1^2 + V_2^2 + V_3^2\right) \leq 0$
+\\
+We already know that $V_0 = V_1$ so
+\\
+$V_2^2 + V_3^2 \leq 0$
+\\
+$V_2^2 \geq 0$ and $V_3^2 \geq 0$ so,
+\\
+$V_2 = V_3 = 0$
+\\
+and $V^\mu$ is a multiple of $k^\mu$
+\\
+\\
+\PRLsep
+\\
+\textbf{3.a.}
+\\
+Using the definition of the infintesimal Lorentz transform, $\Lambda^\mu_{\;\nu} = \left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right)$, 
+express $\delta x^\mu = x^{\prime\mu} - x^\mu$ in terms of $\lambda^\mu_{\;\nu}$
+\\
+We know that 
+\\
+$x^{\prime\mu} = \Lambda^\mu_{\;\nu} x^\nu$
+\\
+Then,
+\\
+$x^{\prime\mu} = x^\nu\left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right) $
+\\
+$x^{\prime\mu} = \delta^\mu_\nu x^\nu + \lambda^\mu_{\;\nu}x^\nu $
+\\
+$x^{\prime\mu} = x^\mu + \lambda^\mu_{\;\nu}x^\nu $
+\\
+$x^{\prime\mu} - x^\mu = \delta x^\mu = \lambda^\mu_{\;\nu}x^\nu $
+\\
+\\
+\PRLsep
+\\
+\\
+\newpage
+\textbf{3.b.}
+\\
+Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transform, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$.
+\\
+Keeping in mind that $\Lambda^\nu_{\;\sigma} = \delta\mu_\nu + \lambda^\nu_{\;\sigma}$, show that $\lambda^\nu_{\;\sigma} = -\lambda^\nu_{\;\sigma}$
+\\
+$\eta_{\mu\nu}\left(\delta^\mu_\rho+ \lambda^\mu_{\;\rho}\right)\left(\delta^\nu_\sigma + \lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+\\
+\\
+$\eta_{\mu\nu}\left(\delta^{\mu\nu}_{\rho\sigma} + \delta^\nu_\sigma \lambda^\mu_{\;\rho} + \delta^\mu_\rho \lambda^\nu_{\;\sigma} + \lambda^\mu_{\;\rho}\lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+\\
+\\
+The product of two infintesimal $\lambda$s above is taken to be zero.
+\\
+\\
+$\eta_{\rho\sigma} + \delta^\nu_\sigma \lambda_{\nu\rho} + \delta^\mu_\rho\Lambda_{\mu\sigma} = \eta_{\rho\sigma}$
+\\
+\\
+$\eta_{\rho\sigma} + \lambda_{\sigma\rho} + \lambda_{\rho\sigma} = \eta_{\rho\sigma}$
+\\
+\\
+For the above to evaluate correctly, we must have 
+\\
+$\lambda_{\sigma\rho} - \lambda_{\rho\sigma} = 0$
+\\
+So, 
+\\
+$\lambda_{\sigma\rho} = -\lambda_{\rho\sigma}$
+\\
+\\
+\PRLsep
+\\
+\\
+\newpage
+\textbf{3.c.}
+\\
+Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$ looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
+\\
+\\
+Given that $M_{\mu\nu}$ is defined as 
+\\
+$M_{\mu\nu} = x_\mu\partial_\nu - x_\nu\partial_\mu$
+\\
+Show that 
+\\
+$\dfrac{1}{2} M_{\rho\sigma}\left(x^\mu\right) = -\lambda^\mu_{\;\nu} x^\nu = -\delta x^\mu$
+\\
+First, write out $\frac{1}{2}M_{\rho\sigma}\left(x^\mu\right)$
+\\
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_\sigma x^\mu - x_\sigma \partial_\rho x^\mu\right)$
+\\
+then, evaluate the partial derivatives
+\\
+$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \delta^\mu_\sigma - x_\sigma \delta^\mu_\rho\right)$
+\\
+Multiply the common factor back in
+\\
+$= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \dfrac{1}{2}\lambda^{\mu\sigma}x_\sigma$
+\\
+Which, from the anti-symmetry of $\lambda_{\mu\nu}$ shown above, produces
+\\
+$=\lambda^{\sigma\mu} x_\sigma$
+\\
+$=-\lambda^{\mu\sigma} x_\sigma$
+\\
+We can always swap the vertical positions of the dummy indices.
+\\
+$=-\lambda^\mu_{\;\sigma} x^\sigma = -\delta x^\sigma$
+\\
+The last equality is demonstrated in 3.a. above.
+\\
+\\
+\PRLsep
+\\
+\\
+\newpage
+\textbf{3.d.}
+\\
+Show that $M_{\mu\nu}$ obeys the algebra, 
+$\left[M_{\mu\nu}, M_{\rho\sigma}\right] = eta_{\nu\rho}M_{\mu\sigma} - eta_{\mu\rho}M_{\nu\sigma} + eta_{\mu\sigma}M_{\nu\rho} - eta_{\nu\sigma}M_{\mu\rho}$
+\\
+Do the obvious thing and evaluate the commutator which will give 8 terms.
+\\
+$\left(x_\mu \partial_\nu - x_\nu \partial_\mu\right)\left(x_\rho \partial_\sigma - x_\sigma \partial_\rho\right)$
+\\
+The resulting 8 terms are listed and simplified below
+\\
+1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma$
+\\
+The above uses the identity $U_\mu = \eta_{\mu\nu}U^\nu$.  Note that the dummy index goes to the rigth on the $\eta$.
+\\
+Getting started with number 1 again, we have,
+\\
+1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma = x_\mu \delta_\nu^\alpha \eta_{\rho\alpha} = x_\mu \eta_{\rho\nu} \partial_\sigma = \eta_{\rho\nu} x_\mu \partial_\sigma$
+\\
+The remaining seven terms will be written out following the example of the first term
+\\
+2.  $-x_\nu \partial_\mu x_\rho \partial_\sigma = \eta_{\rho\mu} x_\nu \partial_\sigma$
+\\
+3.  $x_\nu \partial_\mu x_\sigma \partial_\rho = \eta_{\sigma\mu} x_\nu \partial_\rho$
+\\
+4.  $-x_\mu \partial_\nu x_\sigma \partial_\rho = \eta_{\sigma\nu} x_\mu \partial_\rho$
+\\
+5.  $x_\rho \partial_\sigma x_\mu \partial_\nu = \eta_{\mu\sigma} x_\rho \partial_\nu$
+\\
+6.  $x_\rho \partial_\sigma x_\nu \partial_\mu = \eta_{\nu\sigma} x_\rho \partial_\mu$
+\\
+7.  $-x_\sigma \partial_\rho x_\nu \partial_\mu = \eta_{\nu\rho} x_\sigma \partial_\mu$
+\\
+8.  $x_\sigma \partial_\rho x_\mu \partial_\nu = \eta_{\mu\rho} x_\sigma \partial_\nu$
+\\
+Rearraning terms, grouping, and adding, we see that we can get the desired result by the sum of grouped terms, 
+\\
+(1 and 7) + (2 and 8) + (3 and 5) + (4 and 6)
+\\
+$\eta_{\nu\rho}M_{\mu\sigma} - \eta_{\mu\rho}M_{\nu\sigma} + \eta_{\mu\sigma}M_{\nu\rho} - \eta_{\nu\sigma}M_{\nu\rho}$
+
+
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
