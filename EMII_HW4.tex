@@ -67,10 +67,10 @@
 Write the Lorentz force equation $m \frac{d^2 x^\mu}{d\tau^2} = e F^\mu_{\;\nu} \frac{d x^\nu}{d\tau}$ as a matrix equation, where $F$ and $X$ are 
 \\
 $F = \begin{pmatrix}
-F^0_{\;0} & F^0_{\;1} & F^0_{\;2} & F^0_{\;3}\\
-F^1_{\;0} & F^1_{\;1} & F^1_{\;2} & F^1_{\;3}\\
-F^2_{\;0} & F^2_{\;1} & F^2_{\;2} & F^2_{\;3}\\
-F^3_{\;0} & F^3_{\;1} & F^3_{\;2} & F^3_{\;3}\\
+F^0_{\;\;0} & F^0_{\;\;1} & F^0_{\;2} & F^0_{\;\;3}\\
+F^1_{\;\;0} & F^1_{\;\;1} & F^1_{\;\;2} & F^1_{\;\;3}\\
+F^2_{\;\;0} & F^2_{\;\;1} & F^2_{\;\;2} & F^2_{\;\;3}\\
+F^3_{\;\;0} & F^3_{\;\;1} & F^3_{\;\;2} & F^3_{\;\;3}\\
 \end{pmatrix} $, 
 $X = \begin{pmatrix}
 x^0\\
@@ -83,42 +83,61 @@ x^3\\
 Obtain the general solution for $X\left(\tau\right)$ as a simple matrix expression.
 \\
 \\
+We'll work with a simple variable analogy and then apply it directly to the matrix formulation.  If we start with 
+\\
+\\
+$m\dfrac{d^2 x}{d\tau^2} = e F \dfrac{d x}{d\tau}$
+\\
+A single integration will give us
+\\
+\\
+$m\dfrac{d x}{d\tau} = e F \tau + C_1$
+\\
+\\
+The above can be written as 
+\\
+$m\dfrac{d x}{d\tau} = e F \tau + C_1$
+\\
+\\
 First, we can write the Lorentz force expression in matrix form,
 \\
 \\
-$m \dfrac{d^2 X}{d\tau^2} = e F \dfrac{dX}{d\tau}$.
+$\dfrac{dX}{x+C_1} = \dfrac{e F}{m} d\tau$.
 \\
 \\
-Then, we integrate with respect to $\tau$ once to get,
+This can be solved to give
 \\
 \\
-$\dfrac{d X}{d\tau} = \dfrac{e F}{m} X\left(\tau\right) + C$.
+$ln\left(x+C_1\right) = \dfrac{e F}{m} \tau + C_2$
+\\
+$x + C_1 = exp\left\{\dfrac{e F}{m} \tau + C_2\right\}$
+\\
+$x + C_1 = exp\left\{\dfrac{e F}{m} \tau\right\}exp\left\{C_2\right\}$
+\\
+$x\left(\tau\right) = C_3 exp\left\{\dfrac{e F}{m} \tau\right\} - C_1$
 \\
 \\
-Where $C$ are initial conditions with units of proper velocity
+This can be applied immediately to the matrix version to get 
 \\
-The solution we'll try is an ansatz of the form 
-\\
-\\
-$X\left(\tau\right) = e^{\frac{e}{m}F\tau}X\left(0\right)$
+$X\left(\tau\right) = C_3 e^{\frac{e}{m}F\tau} - C_1$
 \\
 \\
-Where, $X\left(0\right)$ is the intial state of the position matrix $X$.  
+Where, $C_3$ and $C_1$ are now initial condition matrices as opposed to simple variables.  
 \\
 \\
 To check the solution, we'll make use of the definition of exponentiation for a matrix given in the assignment:
 \\
 \\
-$e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F^0 + \dfrac{\tau}{1}\dfrac{e}{m}A^1 + \dfrac{\tau}{2!}\left(\dfrac{e}{m}A\right)^2 + ...$
+$e^{\frac{e}{m}F\tau} = C_3\dfrac{e}{m}F^0 + \dfrac{\tau}{1}C_3\dfrac{e}{m}F^1 + \dfrac{\tau^2}{2!}\left(C_3\dfrac{e}{m}F\right)^2 + ...$
 \\
 \\
 When we take the derivative of the expression, since $\dfrac{e}{m}F$ is not a function of $\tau$, we get
 \\
 \\
-$\dfrac{d}{d\tau} e^{A\tau} = \left(0 + \dfrac{t}{1!}\dfrac{e}{m}F + \dfrac{2t^2}{2!}\left(\dfrac{e}{m}F\right)^2 + \dfrac{3t^3}{3!}\left(\dfrac{e}{m}F\right)^2\right)\dfrac{e}{m}F$
+$\dfrac{d}{d\tau} e^{\frac{e}{m}F\tau} = \left(0 + \dfrac{\tau}{1!}\dfrac{e}{m}F + \dfrac{2\tau^2}{2!}\left(\dfrac{e}{m}F\right)^2 + \dfrac{3\tau^3}{3!}\left(\dfrac{e}{m}F\right)^2\right)\dfrac{e}{m}F$
 \\
 \\
-$\dfrac{d}{d\tau} e^{\frac{e}{m}F} = \dfrac{e}{m}F\;e^{\frac{e}{m}F}$ 
+$\dfrac{d}{d\tau} e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F\;e^{\frac{e}{m}F\tau}$ 
 \\
 \\
 \PRLsep
