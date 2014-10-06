@@ -112,7 +112,7 @@ To check the solution, we'll make use of the definition of exponentiation for a 
 $e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F^0 + \dfrac{\tau}{1}\dfrac{e}{m}A^1 + \dfrac{\tau}{2!}\left(\dfrac{e}{m}A\right)^2 + ...$
 \\
 \\
-When we take the derivvatviie of the expression, since $\dfrac{e}{m}F$ is not a function of $\tau$, we get
+When we take the derivative of the expression, since $\dfrac{e}{m}F$ is not a function of $\tau$, we get
 \\
 \\
 $\dfrac{d}{d\tau} e^{A\tau} = \left(0 + \dfrac{t}{1!}\dfrac{e}{m}F + \dfrac{2t^2}{2!}\left(\dfrac{e}{m}F\right)^2 + \dfrac{3t^3}{3!}\left(\dfrac{e}{m}F\right)^2\right)\dfrac{e}{m}F$
@@ -123,163 +123,147 @@ $\dfrac{d}{d\tau} e^{\frac{e}{m}F} = \dfrac{e}{m}F\;e^{\frac{e}{m}F}$
 \\
 \PRLsep
 \\
-\textbf{1.b.}
+\newpage
+\textbf{2.a.}
 \\
-First, even though, they're not required, a few notes on swapping dummy indices up and down.  As it turns out,
-\\
-$B^\mu A_\mu = B_\mu A^\mu$
-\\
-Here's why.  We can write $A_mu$ as
-\\
-$A_\mu = \eta_{\mu\rho}A^\rho$
-\\
-Now we have
-\\
-$B^\mu A_\mu = B^\mu \eta_{\mu\rho} A^\rho$
-\\
-$B^\mu A_\mu = \eta_{\mu\rho} B^\mu A^\rho$
-\\
-$B^\mu A_\mu = B_\mu A^\rho$
+We're to take the definition of the Hodge dual
+$*F_{\mu\nu} = \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\mu\nu}$ and show that
 \\
 \\
-The actual problem to be worked is to show that
+$\partial^\mu *F_{\mu\nu} = 0$
 \\
-$S_{\mu\nu} = W_{\mu\rho}W_\nu^{\;\;\rho}$
 \\
-is symmetric
+in analogy to our original Bianchi identity
 \\
-First, we permute indices to get
-$S_{\nu\mu} = W_{\nu\rho}W_\mu^{\;\;\rho}$
 \\
-But, this isn't the same as the original expression yet, so we swap our dummy indices up and down to get 
+$\partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mu\nu}$
 \\
-$S_{\nu\mu} = W_{\nu}^{\;\;\rho}W_{\mu\rho}$
 \\
-$= W_{\mu\rho} W_{\nu}^{\;\;\rho}$
+First, notice that there are degnerate cases in the analogous expression that will make it automatically go to zero.  These are the cases where $\mu = \nu$, $\nu = \rho$, and $\rho = \mu$ because $F_{\mu\nu}$ is assymetric.
 \\
-Which is identical to the original expression for $S_{\mu\nu}$ demonstrating symmetry.
+\\
+These same cases also appear in the first expression, where if any of the indeics of $\epsilon_{\mu\nu\rho\sigma}$ are equal to each other then the epxression is zero.
+\\
+\\
+$\nu$ is the only free index of the Hodge dual expression above.  Once that index is chosen, then $\mu$ is summed over only three values.  Each of these three values locks in only two possible values for the $F^{\mu\nu}$ expression.  Since the last two indeces on the two index field four-tensor are anti-symmetric, and the four dimensional Levi-Civita is anti-symmetric, swapping these last two indeices results in two times the magnitude of either term.  So, looking at the case where $\nu = 0$ for example, we wind up with 
+\\
+\\
+$\left(\partial^1 F_{23} + \partial^2 F_{13} +\partial^3 F_{12}\right)$
+\\
+\\
+We can see that this produces three terms as in our original Bianchi identity that follow the same index rules that our three indices, (in this case, labeled as $\mu$, $\rho$, and $\sigma$), $\mu \neq \rho \neq \sigma$.  By cycling over all the available indices he Hodge dual derivative expression produces the exact same terms as the analogous Bianchi identity we started with.
 \\
 \PRLsep
+\newpage
+\textbf{2.b.}
+\\
+In this problem we'll use the Hodge dual identity proven above, namely, 
 \\
 \\
-\textbf{2}
-\\
-If a four-vector is timelike then $V^\mu V_\mu < 0$.  If it's spacelike then $V^\mu V_\mu > 0 $.  Lightlike vectors have $V^\mu V_\mu = 0$.  Suppose $k_\mu$ is a null vector.  Show that if a non-spacelike vector, $V^\mu$ is orthogonal to $k^\mu$ i.e. $k^\mu V_\mu = 0$ then $V^\mu$ is a multiple of $k^\mu$.
-\\
-$k^\mu V_\mu = 0 = k^\mu k_\mu$
-\\
-from the fact that $k_\mu$ is null.
-\\
-$k^\mu V_\mu - k^mu k_\mu = 0$
-\\
-$k^\mu\left(V_\mu - k_\mu\right) = 0$
-\\
-$V_\mu - k_\mu = 0$
-\\
-$V_\mu = k_\mu$
+$\partial^\mu *F_{\mu\nu} = \partial^\mu \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\mu\nu} = 0$
 \\
 \\
-This, however gives a particular answer, and not the general answer.  For the general answer, let's take a look at a 3+1 split of $k^\mu$.  The product $k^\mu k_\mu = 0$ evaluates to 
-\\
-$k^\mu k_\mu = -\left(k_0 k_0\right) + \left(k_1^2 + k_2^2 + k_3^2\right)$
-\\
-For this to evaulate to zero, we must have 
-$\left(k_0 k_0\right) = \left(k_1^2 + k_2^2 + k_3^2\right)$
-\\
-Meaning that the time coordinate must be equal to the usual Pythagorean magnitude for the space components' line segment.  We can exploit the symmetry of the situation to make things even simpler.  Rotate the spatial coordinate system so that the space component of our vector lies entirely on the x axis, we get for the general case with $V_\mu$
+To show that 
 \\
 \\
-$-\left(k_0 V^0\right) + \left(k_1 V^1\right) = 0$
+$\partial_\mu V^\mu = \dfrac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}$
 \\
 \\
-If we back up and describe the same situation in the x-t coordinates for $k^\mu k_\mu$, we see that 
+where $V^\mu = \epsilon^{\mu\nu\rho\sigma}A_\nu F_{\rho\sigma}$
 \\
-$\left(k_0 k_0\right) = \left(k_1^2\right)$
 \\
-and the vector must have the same magnitude in the time and space directions.  Keeping in mind that whatever direction the space component of $k^\mu$ was pointed in, it could have been rotated onto the x-axis in this 3+1 treatment.
+The first step is to evluate $\partial_\mu V^\mu$ to get
 \\
-Returning to the general case, we had 
 \\
-$\left(k_0 V^0\right) = \left(k_1 V^1\right)$, 
+$\partial_\mu V^\mu = \epsilon^{\mu\nu\rho\sigma}\partial_\mu A_\nu F_{\rho\sigma} + A_\nu \partial_\mu\epsilon^{\mu\nu\rho\sigma} F_{\rho\sigma}$
 \\
-but we've just shown that $k_0$ must equal $k_1$, so we now have, 
 \\
-$\left(k_0 V^0\right) = \left(k_0 V^1\right)$, 
+Via the Hodge dual identity stated above, the second term evaluates to zero leaving us with 
 \\
-and $V^0$ must equal $V^1$.  Because the components are equal in magnitude.  We still don't know anything about the other two components of $V^\mu$ though.  Here's where we finally use the non-spacelike condiction of $V^\mu$.  If we write the condition out, we have 
 \\
-$V^\mu V_\mu \leq 0$
+$\partial_\mu V^\mu = \epsilon^{\mu\nu\rho\sigma}\partial_\mu A_\nu F_{\rho\sigma}$
 \\
-This can be expanded to give 
 \\
-$-\left(V_0^2\right) + \left(V_1^2 + V_2^2 + V_3^2\right) \leq 0$
+Or... We could do it the easy way.  We could use the expression 
 \\
-We already know that $V_0 = V_1$ so
 \\
-$V_2^2 + V_3^2 \leq 0$
+$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ 
 \\
-$V_2^2 \geq 0$ and $V_3^2 \geq 0$ so,
 \\
-$V_2 = V_3 = 0$
+to rewrite the right hand side of what we want to prove:
 \\
-and $V^\mu$ is a multiple of $k^\mu$
 \\
+$\partial_\mu \epsilon^{\mu\nu\rho\sigma}A_\nu F_{\rho\sigma} = \dfrac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}$
+\\
+to get, 
+\\
+\\
+$\dfrac{1}{2}\epsilon^{\mu\nu\rho\sigma} \left(\partial_\mu A_\nu - \partial_\nu A_\mu\right)F_{\rho\sigma}$
+\\
+\\
+Distributing, we get
+\\
+\\
+$\dfrac{1}{2} \left(\epsilon^{\mu\nu\rho\sigma} \partial_\mu A_\nu F_{\rho\sigma} - \epsilon^{\mu\nu\rho\sigma} \partial_\nu A_\mu F_{\rho\sigma}\right)$
+\\
+\\
+Rearranging this just a tad gives:
+\\
+\\
+$\dfrac{1}{2} \left(\partial_\mu \epsilon^{\mu\nu\rho\sigma}  A_\nu F_{\rho\sigma} - \epsilon^{\mu\nu\rho\sigma} \partial_\nu A_\mu F_{\rho\sigma}\right)$
+\\
+\\
+Where we realize that the first term in parentheis is identical to the left hand of the expression, now, we just need to convert the minus sign on the second term to a plus sign, and we're done.  Interchanging the indices on the partial and the field four-vector on the second term introduces a negative sign:
+\\
+\\
+$\dfrac{1}{2} \left(\partial_\mu \epsilon^{\mu\nu\rho\sigma}  A_\nu F_{\rho\sigma} + \epsilon^{\mu\nu\rho\sigma} \partial_\mu A_\nu F_{\rho\sigma}\right) = \partial_\mu \epsilon^{\mu\nu\rho\sigma}A_\nu F_{\rho\sigma}$
+\\
+\\
+Which is equal to the left hand side of the expression we were trying to prove!
 \\
 \PRLsep
-\\
+\newpage
 \textbf{3.a.}
 \\
-Using the definition of the infintesimal Lorentz transform, $\Lambda^\mu_{\;\nu} = \left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right)$, 
-express $\delta x^\mu = x^{\prime\mu} - x^\mu$ in terms of $\lambda^\mu_{\;\nu}$
-\\
-We know that 
-\\
-$x^{\prime\mu} = \Lambda^\mu_{\;\nu} x^\nu$
-\\
-Then,
-\\
-$x^{\prime\mu} = x^\nu\left(\delta^\mu_\nu + \lambda^\mu_{\;\nu}\right) $
-\\
-$x^{\prime\mu} = \delta^\mu_\nu x^\nu + \lambda^\mu_{\;\nu}x^\nu $
-\\
-$x^{\prime\mu} = x^\mu + \lambda^\mu_{\;\nu}x^\nu $
-\\
-$x^{\prime\mu} - x^\mu = \delta x^\mu = \lambda^\mu_{\;\nu}x^\nu $
+Show that $\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\gamma\sigma} = \delta^\mu_\alpha \delta^\nu_\beta \delta^\rho_\gamma - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\gamma - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\gamma + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\gamma + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\gamma + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\gamma$ 
 \\
 \\
-\PRLsep
+Proceed exactly as in the proof for the three index version.  Write out the sum:
 \\
 \\
-\newpage
-\textbf{3.b.}
-\\
-Show that $\lambda^\mu_{\;\nu}$ is anti-symmetric, using the defition of the Lorentz transform, $\eta_{\mu\nu} \Lambda^\nu_{\;\sigma}\Lambda^\mu_{\;\rho} = \eta_{\rho\sigma}$.
-\\
-Keeping in mind that $\Lambda^\nu_{\;\sigma} = \delta\mu_\nu + \lambda^\nu_{\;\sigma}$, show that $\lambda^\nu_{\;\sigma} = -\lambda^\nu_{\;\sigma}$
-\\
-$\eta_{\mu\nu}\left(\delta^\mu_\rho+ \lambda^\mu_{\;\rho}\right)\left(\delta^\nu_\sigma + \lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+$\epsilon^{\mu\nu\rho 0}\epsilon_{\alpha\beta\gamma 0} + \epsilon^{\mu\nu\rho 1}\epsilon_{\alpha\beta\gamma 1} + \epsilon^{\mu\nu\rho 2}\epsilon_{\alpha\beta\gamma 2} + \epsilon^{\mu\nu\rho 3}\epsilon_{\alpha\beta\gamma 3}$
 \\
 \\
-$\eta_{\mu\nu}\left(\delta^{\mu\nu}_{\rho\sigma} + \delta^\nu_\sigma \lambda^\mu_{\;\rho} + \delta^\mu_\rho \lambda^\nu_{\;\sigma} + \lambda^\mu_{\;\rho}\lambda^\nu_{\;\sigma}\right) = \eta_{\rho\sigma}$
+From the properties of the tensor, you can see that if we choose, $\mu = 1$, $\nu = 2$, and $\rho = 3$, or any combination thereof to make the first term not equal zero, the other three terms will automatically evalue to zero. The same can be said of any of the terms, so at most, we need to deal with one of the four terms, and we'll continue to work with the first one.
 \\
 \\
-The product of two infintesimal $\lambda$s above is taken to be zero.
+For this expression, the only index choices that will evaluate as non-zero are shown in the table below:
+\begin{table}[h!]
+\centering
+\caption{Index choices and Results}
+\begin{ruledtabular}
+\begin{tabular}{l c c c c c c p{5cm}}
+% The codes above determine the horizontal alignment in each column.
+% Options are l (left), r (right), c (centered), and p (paragraph).
+% The p option allows an entry to be broken into multiple lines, and
+% therefore requires a width specification, in this case 5 centimeters.
+$\alpha$ & $\beta$ & $\gamma$ & $\mu$ & $\nu$ & $\rho$ & result \\
+\hline	% horizontal line to separate headings from data
+1 & 2 & 3 & 1 & 2 & 3 & +1 \\
+1 & 2 & 3 & 1 & 3 & 2 & -1 \\
+1 & 2 & 3 & 2 & 1 & 3 & -1 \\
+1 & 2 & 3 & 2 & 3 & 1 & +1 \\
+1 & 2 & 3 & 3 & 1 & 2 & +1 \\
+1 & 2 & 3 & 3 & 2 & 1 & -1 \\
+\end{tabular}
+\end{ruledtabular}
+\label{bosons}
+\end{table}
+\\
+Looking at the right hand side of the expredssion we want to prove, only of the six terms can evaluate to non-zero.  Once the index choice has been made for that term, the other five terms go to zero, (I'm repeating myself).  The table can be expressed by permuting the indices $\mu$, $\nu$, and $\rho$ instead of their values to arrive at
 \\
 \\
-$\eta_{\rho\sigma} + \delta^\nu_\sigma \lambda_{\nu\rho} + \delta^\mu_\rho\Lambda_{\mu\sigma} = \eta_{\rho\sigma}$
-\\
-\\
-$\eta_{\rho\sigma} + \lambda_{\sigma\rho} + \lambda_{\rho\sigma} = \eta_{\rho\sigma}$
-\\
-\\
-For the above to evaluate correctly, we must have 
-\\
-$\lambda_{\sigma\rho} - \lambda_{\rho\sigma} = 0$
-\\
-So, 
-\\
-$\lambda_{\sigma\rho} = -\lambda_{\rho\sigma}$
-\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\gamma\sigma} = \delta^\mu_\alpha \delta^\nu_\beta \delta^\rho_\gamma - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\gamma - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\gamma + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\gamma + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\gamma + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\gamma$
 \\
 \PRLsep
 \\
