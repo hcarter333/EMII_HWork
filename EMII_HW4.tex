@@ -263,7 +263,42 @@ $\alpha$ & $\beta$ & $\gamma$ & $\mu$ & $\nu$ & $\rho$ & result \\
 Looking at the right hand side of the expredssion we want to prove, only of the six terms can evaluate to non-zero.  Once the index choice has been made for that term, the other five terms go to zero, (I'm repeating myself).  The table can be expressed by permuting the indices $\mu$, $\nu$, and $\rho$ instead of their values to arrive at
 \\
 \\
-$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\gamma\sigma} = \delta^\mu_\alpha \delta^\nu_\beta \delta^\rho_\gamma - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\gamma - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\gamma + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\gamma + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\gamma + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\gamma$
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\gamma\sigma} = -\delta^\mu_\alpha \delta^\nu_\beta \delta^\rho_\gamma - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\gamma - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\gamma + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\gamma + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\gamma + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\gamma$
+\\
+\PRLsep
+\\
+\\
+\textbf{3.b.}
+\\
+In this one,  we start by writing out the associated sum on the left hand side of 
+\\
+\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\rho\sigma} = -2\delta^\mu_\alpha\delta^\nu_\beta + 2\delta^\mu_\beta\delta^\nu_\alpha$
+\\
+\\
+with its additional contaction
+\\
+\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\rho\sigma} = -\delta^\mu_\alpha \delta^\nu_\beta \delta^\rho_\gamma - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\gamma - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\gamma + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\gamma + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\gamma + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\gamma$
+\\
+\\
+The first term contracts in its last $\delta$ giving 
+\\
+\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\rho\sigma} = -4\delta^\mu_\alpha \delta^\nu_\beta - \delta^\nu_\alpha \delta^\rho_\beta \delta^\mu_\rho - \delta^\rho_\alpha \delta^\mu_\beta \delta^\nu_\rho + \delta^\nu_\alpha \delta^\mu_\beta \delta^\rho_\rho + \delta^\mu_\alpha \delta^\rho_\beta \delta^\nu_\rho + \delta^\rho_\alpha \delta^\nu_\beta \delta^\mu_\rho$
+\\
+\\
+In the second term, $\beta$ must be equal to $\rho$, just as $\mu$ must be.  Consequently, $\mu = \beta$ for the term to not equal zero, so...  Note Kee p in mind, that simple index name substitutions could have been used in this step as well.  Applying these substittuions where possible:
+\\
+\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\rho\sigma} = -4\delta^\mu_\alpha \delta^\nu_\beta - \delta^\nu_\alpha \delta^\mu_\beta - \delta^\nu_\alpha \delta^\mu_\beta + 4\delta^\nu_\alpha \delta^\mu_\beta + \delta^\mu_\alpha \delta^\nu_\beta + \delta^\mu_\alpha \delta^\nu_\beta$
+\\
+\\
+Finally, grouping terms we arrive at,
+\\
+\\
+$\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\rho\sigma} = -2\delta^\mu_\alpha \delta^\nu_\beta + 2\delta^\nu_\alpha \delta^\mu_\beta$
+\\
 \\
 \PRLsep
 \\
@@ -271,88 +306,33 @@ $\epsilon^{\mu\nu\rho\sigma}\epsilon_{\alpha\beta\gamma\sigma} = \delta^\mu_\alp
 \newpage
 \textbf{3.c.}
 \\
-Notes on how to approach the problem.  Notice that the experssion in 3.c. comes from Dirac's article.  Also keep in mind that $M_{\mu\nu}$ looks like a cross product and also looks like a similarity trnaformation once applied.  Also, it looks like the answer for the last part of 3a is contained in 3c. 
+Use the result from 3.b. to show that $*\left(*F_{\mu\nu}\right) = -F_{\mu\nu}$
 \\
 \\
-Given that $M_{\mu\nu}$ is defined as 
-\\
-$M_{\mu\nu} = x_\mu\partial_\nu - x_\nu\partial_\mu$
-\\
-Show that 
-\\
-$\dfrac{1}{2} M_{\rho\sigma}\left(x^\mu\right) = -\lambda^\mu_{\;\nu} x^\nu = -\delta x^\mu$
-\\
-First, write out $\frac{1}{2}M_{\rho\sigma}\left(x^\mu\right)$
-\\
-$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \partial_\sigma x^\mu - x_\sigma \partial_\rho x^\mu\right)$
-\\
-then, evaluate the partial derivatives
-\\
-$\dfrac{1}{2}\lambda^{\rho\sigma}\left(x_\rho \delta^\mu_\sigma - x_\sigma \delta^\mu_\rho\right)$
-\\
-Multiply the common factor back in
-\\
-$= \dfrac{1}{2}\lambda^{\sigma\mu}x_\sigma - \dfrac{1}{2}\lambda^{\mu\sigma}x_\sigma$
-\\
-Which, from the anti-symmetry of $\lambda_{\mu\nu}$ shown above, produces
-\\
-$=\lambda^{\sigma\mu} x_\sigma$
-\\
-$=-\lambda^{\mu\sigma} x_\sigma$
-\\
-We can always swap the vertical positions of the dummy indices.
-\\
-$=-\lambda^\mu_{\;\sigma} x^\sigma = -\delta x^\sigma$
-\\
-The last equality is demonstrated in 3.a. above.
+First, remember that the Hodge dual of $F_{\mu\nu}$ is written as 
 \\
 \\
-\PRLsep
+$*F_{\mu\nu} = \dfrac{1}{2} \epsilon_{\mu\nu\rho\sigma} F^{\rho\sigma}$
 \\
 \\
-\newpage
-\textbf{3.d.}
+Then
 \\
-Show that $M_{\mu\nu}$ obeys the algebra, 
-$\left[M_{\mu\nu}, M_{\rho\sigma}\right] = eta_{\nu\rho}M_{\mu\sigma} - eta_{\mu\rho}M_{\nu\sigma} + eta_{\mu\sigma}M_{\nu\rho} - eta_{\nu\sigma}M_{\mu\rho}$
 \\
-Do the obvious thing and evaluate the commutator which will give 8 terms.
+$*\left(*F_{\alpha\beta}\right) = \dfrac{1}{2} \epsilon^{\alpha\beta\mu\nu} \left(\dfrac{1}{2} \epsilon_{\mu\nu\rho\sigma} F^{\rho\sigma}\right)$
 \\
-$\left(x_\mu \partial_\nu - x_\nu \partial_\mu\right)\left(x_\rho \partial_\sigma - x_\sigma \partial_\rho\right)$
 \\
-The resulting 8 terms are listed and simplified below
+$*\left(*F_{\alpha\beta}\right) = \dfrac{1}{4} \epsilon^{\alpha\beta\mu\nu}\epsilon_{\rho\sigma\mu\nu} F^{\rho\sigma}$
 \\
-1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma$
 \\
-The above uses the identity $U_\mu = \eta_{\mu\nu}U^\nu$.  Note that the dummy index goes to the rigth on the $\eta$.
+Where the first two, for last two index swap in the second $\epsilon$ is accomplished by an even permutation producing no new negative signs.  Using the identity from 3.b.
 \\
-Getting started with number 1 again, we have,
 \\
-1.  $x_\mu \partial_\nu x_\rho \partial_\sigma = x_\mu\partial_\nu\eta{\rho_\alpha}x^\alpha \partial_\sigma = x_\mu \delta_\nu^\alpha \eta_{\rho\alpha} = x_\mu \eta_{\rho\nu} \partial_\sigma = \eta_{\rho\nu} x_\mu \partial_\sigma$
+$*\left(*F_{\alpha\beta}\right) = \dfrac{1}{4} \epsilon^{\alpha\beta\mu\nu}\epsilon_{\rho\sigma\mu\nu} F^{\rho\sigma} = \dfrac{1}{4} \left(-2\delta^\alpha_\rho \delta^\beta_\sigma + 2\delta^\beta_\rho \delta^\alpha_\sigma \right) F_{\rho\sigma}$
 \\
-The remaining seven terms will be written out following the example of the first term
 \\
-2.  $-x_\nu \partial_\mu x_\rho \partial_\sigma = \eta_{\rho\mu} x_\nu \partial_\sigma$
+$*\left(*F_{\alpha\beta}\right) = -\dfrac{1}{2} F_{\alpha\beta} + \dfrac{1}{2} F_{\beta\alpha} = -\dfrac{1}{2} F_{\alpha\beta} + \dfrac{1}{2} F_{\beta\alpha} = -F_{\alpha\beta}$
 \\
-3.  $x_\nu \partial_\mu x_\sigma \partial_\rho = \eta_{\sigma\mu} x_\nu \partial_\rho$
 \\
-4.  $-x_\mu \partial_\nu x_\sigma \partial_\rho = \eta_{\sigma\nu} x_\mu \partial_\rho$
-\\
-5.  $x_\rho \partial_\sigma x_\mu \partial_\nu = \eta_{\mu\sigma} x_\rho \partial_\nu$
-\\
-6.  $x_\rho \partial_\sigma x_\nu \partial_\mu = \eta_{\nu\sigma} x_\rho \partial_\mu$
-\\
-7.  $-x_\sigma \partial_\rho x_\nu \partial_\mu = \eta_{\nu\rho} x_\sigma \partial_\mu$
-\\
-8.  $x_\sigma \partial_\rho x_\mu \partial_\nu = \eta_{\mu\rho} x_\sigma \partial_\nu$
-\\
-Rearraning terms, grouping, and adding, we see that we can get the desired result by the sum of grouped terms, 
-\\
-(1 and 7) + (2 and 8) + (3 and 5) + (4 and 6)
-\\
-$\eta_{\nu\rho}M_{\mu\sigma} - \eta_{\mu\rho}M_{\nu\sigma} + \eta_{\mu\sigma}M_{\nu\rho} - \eta_{\nu\sigma}M_{\nu\rho}$
-
-
 
 % If your manuscript is conditionally accepted, the editors will ask you to
 % submit your editable LaTeX source file.  Before doing so, you should move
