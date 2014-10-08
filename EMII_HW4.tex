@@ -119,25 +119,37 @@ $x\left(\tau\right) = C_3 exp\left\{\dfrac{e F}{m} \tau\right\} - C_1$
 \\
 This can be applied immediately to the matrix version to get 
 \\
-$X\left(\tau\right) = e^{\frac{e}{m}F\tau}C_3  - C_1$
+$\boldsymbol{X}\left(\tau\right) = e^{\frac{e}{m}\boldsymbol{F}\tau}\boldsymbol{C_3}  - \boldsymbol{C_1}$
 \\
 \\
-Where, $C_3$ and $C_1$ are now initial condition column matrices as opposed to simple variables.  
+Where, $\boldsymbol{F}$, $\boldsymbol{C_3}$ and $\boldsymbol{C_1}$ are now initial condition column matrices as opposed to simple variables.  
 \\
 \\
 To check the solution, we'll make use of the definition of exponentiation for a matrix given in the assignment:
 \\
 \\
-$e^{\frac{e}{m}F\tau} = C_3\dfrac{e}{m}F^0 + \dfrac{\tau}{1}C_3\dfrac{e}{m}F^1 + \dfrac{\tau^2}{2!}\left(C_3\dfrac{e}{m}F\right)^2 + ...$
+$e^{\boldsymbol{F}\tau} = F^0 + \dfrac{\tau}{1}\boldsymbol{F}^1 + \dfrac{\tau^2}{2!}\boldsymbol{F}^2 + ...$
 \\
 \\
-When we take the derivative of the expression, since $\dfrac{e}{m}F$ is not a function of $\tau$, we get
+When we take the derivative of the expression, since $\boldsymbol{F}$ is not a function of $\tau$, we get
 \\
 \\
-$\dfrac{d}{d\tau} e^{\frac{e}{m}F\tau} = \left(0 + \dfrac{\tau}{1!}\dfrac{e}{m}F + \dfrac{2\tau^2}{2!}\left(\dfrac{e}{m}F\right)^2 + \dfrac{3\tau^3}{3!}\left(\dfrac{e}{m}F\right)^2\right)\dfrac{e}{m}F$
+$\dfrac{d}{d\tau} e^{\boldsymbol{F}\tau} = \left(\boldsymbol{0} + \boldsymbol{F} + \dfrac{2\tau}{2!}\boldsymbol{F}^2 + \dfrac{3\tau^2}{3!}\boldsymbol{F}^3 + ...\right)$
 \\
 \\
-$\dfrac{d}{d\tau} e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F\;e^{\frac{e}{m}F\tau}$ 
+$\dfrac{d}{d\tau} e^{\boldsymbol{F}\tau} = \left(\boldsymbol{F}^0 + \dfrac{\tau}{1!}\boldsymbol{F}^1 + \dfrac{2\tau^2}{2!}\boldsymbol{F}^2 + \dfrac{\tau^3}{3!}\boldsymbol{F}^3 + ...\right)\boldsymbol{F}$
+\\
+\\
+So, 
+\\
+\\
+$\dfrac{d}{d\tau} e^{\boldsymbol{F}\tau} = e^{\boldsymbol{F}\tau}\boldsymbol{F}$ 
+\\
+\\
+But, the way we factored out the $\boldsymbol{F}$ matrix above was arbitrary, we can also write
+\\
+\\
+$\dfrac{d}{d\tau} e^{\boldsymbol{F}\tau} = \boldsymbol{F}e^{\boldsymbol{F}\tau}$ 
 \\
 \\
 \PRLsep
@@ -146,7 +158,7 @@ $\dfrac{d}{d\tau} e^{\frac{e}{m}F\tau} = \dfrac{e}{m}F\;e^{\frac{e}{m}F\tau}$
 \textbf{2.a.}
 \\
 We're to take the definition of the Hodge dual
-$*F_{\mu\nu} = \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\mu\nu}$ and show that
+$*F_{\mu\nu} = \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}$ and show that
 \\
 \\
 $\partial^\mu *F_{\mu\nu} = 0$
@@ -161,13 +173,19 @@ $\partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mu\nu}$
 First, notice that there are degnerate cases in the analogous expression that will make it automatically go to zero.  These are the cases where $\mu = \nu$, $\nu = \rho$, and $\rho = \mu$ because $F_{\mu\nu}$ is assymetric.
 \\
 \\
-These same cases also appear in the first expression, where if any of the indeics of $\epsilon_{\mu\nu\rho\sigma}$ are equal to each other then the epxression is zero.
+These same cases also appear in the first expression, where if any of the indices of $\epsilon_{\mu\nu\rho\sigma}$ are equal to each other then the epxression is zero.
 \\
 \\
-$\nu$ is the only free index of the Hodge dual expression above.  Once that index is chosen, then $\mu$ is summed over only three values.  Each of these three values locks in only two possible values for the $F^{\mu\nu}$ expression.  Since the last two indeces on the two index field four-tensor are anti-symmetric, and the four dimensional Levi-Civita is anti-symmetric, swapping these last two indeices results in two times the magnitude of either term.  So, looking at the case where $\nu = 0$ for example, we wind up with 
+Rewriting the expression to be proven in more detail
 \\
 \\
-$\left(\partial^1 F_{23} + \partial^2 F_{13} +\partial^3 F_{12}\right)$
+$\partial^\mu*F_{\mu\nu} = \partial^\mu\dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}$
+\\
+\\
+$\nu$ is the only free index of the Hodge dual expression above.  Once that index is chosen, then $\mu$ is summed over only three values.  Each of these three values locks in only two possible values for the $F^{\mu\nu}$ expression.  Since the last two indices on the two index field four-tensor are anti-symmetric, and the four dimensional Levi-Civita is anti-symmetric, swapping these last two indeices results in two times the magnitude of either term.  So, looking at the case where $\nu = 0$ for example, we wind up with 
+\\
+\\
+$\left(\partial^1 F^{23} + \partial^2 F^{13} +\partial^3 F^{12}\right)$
 \\
 \\
 We can see that this produces three terms as in our original Bianchi identity that follow the same index rules that our three indices, (in this case, labeled as $\mu$, $\rho$, and $\sigma$), $\mu \neq \rho \neq \sigma$.  By cycling over all the available indices he Hodge dual derivative expression produces the exact same terms as the analogous Bianchi identity we started with.
@@ -179,7 +197,7 @@ We can see that this produces three terms as in our original Bianchi identity th
 In this problem we'll use the Hodge dual identity proven above, namely, 
 \\
 \\
-$\partial^\mu *F_{\mu\nu} = \partial^\mu \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\mu\nu} = 0$
+$\partial^\mu *F_{\mu\nu} = \partial^\mu \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma} = 0$
 \\
 \\
 To show that 
