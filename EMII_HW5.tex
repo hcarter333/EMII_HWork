@@ -1,0 +1,458 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Homework V Due 2014/10/21}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+\textbf{1}
+\\
+\\
+Show that $T^\mu_{\;\;\mu} = 0$
+\\
+\\
+First, look at the 3 + 1 interpretation of this problem
+\\
+\\
+$T_{ij} = \dfrac{1}{4\pi}\left(-E_iE_j - B_iB_j + \dfrac{1}{2}\delta_{ij}\left(\vec{E}^2 + \vec{B}^2\right)\right)$
+\\
+\\
+When we restrict this spatial portion to be summed over two dummy indices, we get
+\\
+\\
+$T_{ij} = \dfrac{1}{4\pi}\left(-\vec{E}^2 - \vec{B}^2 + \dfrac{1}{2}\vec{E}^2 + \dfrac{1}{2}\vec{B}^2\right)$
+\\
+$= \dfrac{1}{8\pi}\left(\vec{E}^2 + \vec{B}^2\right)$
+\\
+\\
+The $00$ term gives
+\\
+\\
+$T_00 = \dfrac{1}{8\pi}\left(\vec{E}^2 + \vec{B}^2\right)$
+\\
+\\
+so
+$T_{ii} + T_{00} = 0$
+\\
+\textbf{The much, much easier way}
+\\
+Write the trace as
+\\
+\\
+$T_{\;\;\mu}^\mu= \eta_{\mu\nu}T^{\mu\nu} = \eta_{\mu\nu}\dfrac{1}{4\pi}\left(F^\mu_{\;\;\sigma} F^{\nu\sigma}-\dfrac{1}{4}\eta^{\mu\nu}F_{\sigma\lambda}F^{\sigma\lambda}\right)$
+\\
+\\
+Then, using the property $\eta_{\mu\nu}\eta^{\mu\nu} = 4$, we arrive at 
+\\
+\\
+$T_{\;\;\mu}^\mu= \eta_{\mu\nu}T^{\mu\nu} = \eta_{\mu\nu}\dfrac{1}{4\pi}\left(F_{\nu\sigma} F^{\nu\sigma}-F_{\sigma\lambda}F^{\sigma\lambda}\right) = 0$
+\\
+\\
+
+\PRLsep
+\\
+\newpage
+\textbf{1.b.}
+\\
+The definition of $*F_{\mu\nu}$ is 
+\\
+\\
+$*F_{\mu\nu} = \dfrac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}$
+\\
+\\
+Write down the values for $*F_{\mu\nu}$ in terms of $\vec{E}$ and $\vec{B}$.  Then, show that $*F_{\mu\nu}$ can be obtained from $F_{\mu\nu}$ by sending $\vec{E} \rightarrow -\vec{B}$ and $\vec{B} \rightarrow -\vec{E}$ 
+\\
+\\
+We need
+\\
+\\
+$F^{0i} = E_i$, $F^{i0} = -E_i$, and $F_{ij} = \epsilon_{ijk}B_k$
+\\
+\\
+$*F_{00} = 0$
+\\
+$*F_{01} = \dfrac{1}{2}\;2B_1$, $*F_{02} = \dfrac{1}{2}\;2B_2$, $*F_{03} = \dfrac{1}{2}\;2B_3$
+\\
+\\
+$*F_{12} = \dfrac{1}{2}\epsilon_{1203}E_3 + \dfrac{1}{2}\epsilon{1230}E_3 = F_{12} = \dfrac{1}{2}2E_3$
+\\
+$*F_{21} = -*F_{12}$
+\\
+\\
+done
+\\
+\\
+\PRLsep
+\\
+\newpage
+\textbf{2.a.}
+\\
+Show that the energy momentum tensor can be written as 
+\\
+\\
+$T_{\mu\nu} = \dfrac{1}{8\pi}\left(F_{\mu\rho}F_\nu^{\;\;\rho}+*F_{\mu\rho}*F_\nu^{\;\;\rho}\right)$
+\\
+\\
+$*F_\nu^\rho = \eta_{\nu\alpha}*F^{\alpha\rho} = \eta_{\nu\alpha}\epsilon^{\alpha\rho\beta\gamma}F_{\beta\gamma}$
+\\
+\\
+$*F_{\mu\rho}*F_\nu^\rho = \dfrac{1}{4}\eta_{\nu\alpha}*F^{\alpha\rho} = \eta_{\nu\alpha}\epsilon_{\mu\rho\kappa\sigma}\epsilon^{\alpha\rho\beta\gamma}F^{\kappa\sigma}F_{\beta\gamma}$
+\\
+\\
+$= \dfrac{1}{4}\eta_{\nu\alpha}\left[-\delta_\mu^\alpha \delta_\kappa^\beta \delta_\sigma^\gamma - \delta_\mu^\beta \delta_\mu^\gamma \delta_\sigma^\alpha - \delta_\mu^\gamma \delta_\kappa^\alpha \delta_\sigma^\beta + \delta_\mu^\beta \delta_\kappa^\alpha \delta_\sigma^\gamma + \delta_\mu^\alpha \delta_\kappa^\gamma \delta_\sigma^\beta + \delta_\mu^\gamma \delta_\kappa^\beta \delta_\sigma^\alpha \right]F^{\kappa\sigma}F_{\beta\gamma}$
+\\
+$= \dfrac{1}{4}\left[-\eta_{\nu\mu}F^{\beta\sigma}F_{\beta\sigma} - \eta_{\nu\sigma}F^{\kappa\alpha}F_{\mu\kappa} - \eta_{\nu\kappa}F^{\kappa\beta}F_{\beta\mu} + \eta_{\nu\kappa}F^{\kappa\sigma}F_{\mu\sigma} + \eta_{\nu\mu}F^{\gamma\sigma}F_{\sigma\gamma} + \eta_{\nu\sigma}F^{\beta\sigma}F_{\beta\mu} \right]$
+\\
+\\
+$ = \dfrac{1}{2}\eta_{\nu\mu}F_{\sigma\kappa}F^{\kappa\sigma} + \dfrac{1}{2}\eta_{\nu\sigma}F^{\kappa\sigma}F_{\kappa\mu} + \dfrac{1}{2}\eta_{\nu\kappa}F^{\kappa\sigma}F_{\mu\sigma}$
+\\
+$ = \dfrac{1}{2}\eta_{\nu\mu}F_{\sigma\kappa}F^{\kappa\sigma} + F_{\sigma\mu}F^{\sigma}_{\;\;\nu}$
+\\
+\\
+$T_{\mu\nu} = \dfrac{1}{8\pi}\left[F_{\mu\nu}F_\nu^{\;\;\rho} - \dfrac{1}{2}\eta_{\mu\nu}F_{\lambda\sigma}F^{\lambda\sigma}+F_{\mu\nu}F_\nu^{\;\;\rho}\right]$
+\\
+$ = \dfrac{1}{4\pi}F_{\mu\nu}F_\nu^{\;\;\rho} - \dfrac{1}{16\pi}\eta_{\mu\nu}F_{\lambda\sigma}F^{\lambda\sigma}$
+\\
+\PRLsep
+\newpage
+\textbf{2.b.}
+\\
+Show that the energy momentum tensor for the EM field satisfies
+\\
+\\
+$T_{\mu\rho}T^{\nu\rho} = \dfrac{1}{\left(8\pi\right)^2}\left[\left(E^2 - B^2\right) + 2\left(\vec{E}\cdot\vec{B}\right)^2\right]\delta_\mu^\nu$
+\\
+\\
+$T_{\mu\rho}$ and $T^{\nu\rho}$ are symmetric and therefore diagonalizable.  The product of two diagonal matrices is also diagonal,therefore the result is proportional to $\delta_\mu^\nu$
+\\
+\\
+While the above shows that we're looking for an expression that is proportional to a Kronecker delta, it doesn't tell us what the terms are.  To find that, let's look at a 3+1 decomposition of the contraction we're studying.  We have the following representations of $T^{\mu\nu}$
+\\
+\\
+$T^{i0} = \dfrac{1}{4\pi}\left(F^0_\rho F^{i\rho}\right)$
+\\
+\\
+$T^{ij} = \dfrac{1}{4\pi}\left(F^i_\rho F^{j\rho} - \dfrac{1}{4}\eta^{ij} F^{\rho\sigma}F_{\rho\sigma}\right)$
+\\
+\\
+We can 3+1 deompose the entire contraction as 
+\\
+\\
+$T^{\mu\rho} T_{\nu\rho} = T^{00} T_{00} + T^{0k} T_{0k} + T^{\mu\rho} T_{\nu\rho}$
+\\
+\\
+\\
+\PRLsep
+\newpage
+\textbf{3.a.}
+\\
+\\
+Derive the equations of motion from the Lagrangian density
+\\
+\\
+$L = -\dfrac{1}{16\pi}F^{\mu\nu}F_{\mu\nu}-\dfrac{m^2}{8\pi}A^\mu A_\mu + J^\mu A_\mu$
+\\
+\\
+$S = \int L d^4x = -\dfrac{1}{16\pi}F^{\mu\nu}F_{\mu\nu}-\dfrac{m^2}{8\pi}A^\mu A_\mu + J^\mu A_\mu d^4x$
+\\
+\\
+$= \int -\dfrac{1}{8\pi}F^{\mu\nu}\delta F_{\mu\nu}-\dfrac{m^2}{4\pi}A^\mu \delta A_\mu + J^\mu \delta A_\mu d^4x$
+\\
+\\
+$= \int -\dfrac{1}{8\pi}F^{\mu\nu}\delta \left(\partial_\mu \delta A_\nu - \partial_\nu \delta A_\mu\right)-\dfrac{m^2}{4\pi}A^\mu \delta A_\mu + J^\mu \delta A_\mu d^4x$
+\\
+\\
+$= \int \partial_\mu \left( -\dfrac{1}{4\pi}F^{\mu\nu}\delta A_\nu d\Sigma_\nu \right) + \int  \left( -\dfrac{1}{4\pi}\partial_\mu F^{\mu\nu} - \dfrac{m^2}{4\pi} A^\nu + J^\nu \delta A_\nu + J^\nu \right) \delta A_\nu d^4x$
+\\
+\\
+The first term goes to zero because the fields vanish on the infinite spatial boundary of the surface. So, 
+\\
+\\
+$= \int  \left( -\dfrac{1}{4\pi}\partial_\mu F^{\mu\nu} - \dfrac{m^2}{4\pi} A^\nu + J^\nu \right) \delta A_\nu d^4x$
+\\
+\\
+and for $\delta S = 0$, we have
+\\
+\\
+$\partial_\mu F^{\mu\nu} - \dfrac{m^2}{4\pi} A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+Taking $\partial_nu$ of the expression gives us an identity we'll need in the next step
+\\
+\\
+$\partial_\nu \left(\partial_\mu F^{\mu\nu} - m^2 A^\nu + 4\pi J^\nu\right) = 0$
+\\
+\\
+but, 
+\\
+\\
+$\partial_\mu F^{\mu\nu} + 4\pi J^\nu = 0$, so
+\\
+\\
+$- m^2 \partial_\nu A^\nu = 0$
+\\
+\\
+$\partial_\mu \left(\partial^\mu A^\nu - \partial^\nu A^\mu\right) - \dfrac{m^2}{4\pi} A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+$ \partial_\mu\partial^\mu A^\nu - \partial_\mu\partial^\nu A^\mu - \dfrac{m^2}{4\pi} A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+Using the identity above, the second term goes to zero
+\\
+\\
+$= \partial_\mu\partial^\mu A^\nu - \dfrac{m^2}{4\pi} A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+$= \left(\Box - \dfrac{m^2}{4\pi}\right) A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+Using the radial symmetry and the static nature of a point charge specified in the problem gives the following procession
+\\
+\\
+$= \left(-\dfrac{\partial^2}{\partial t^2} + \dfrac{\partial^2}{\partial x_i^2} - \dfrac{m^2}{4\pi}\right) A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+$= \left(\dfrac{\partial^2}{\partial x_i^2} - \dfrac{m^2}{4\pi}\right) A^\nu + 4\pi J^\nu = 0$
+\\
+\\
+$= \left(\dfrac{\partial^2}{\partial r^2} - \dfrac{m^2}{4\pi}\right) \phi\left(r\right) + 4\pi \rho = 0$
+\\
+\\
+The solution for this equation can be obtained by using the Greens function for the Helholtz operator and is 
+$\phi = \dfrac{q}{r}e^{-mr}$
+\\
+\\
+Where q is the charge of the point particle and m is its mass?
+\\
+\\
+Let's run a quick check of our 'ansatz'.  We know that
+\\
+\\
+$\nabla^2\left(\dfrac{q}{r}e^{-mr}\right) = -4\pi q \delta^3(r)$
+\\
+\\
+Where I've used $r$ to represent $|\vec{r}-\vec{r^\prime}|$ since the charge is at the origin.
+\\
+\\
+Applying the product rule we get
+$\nabla^2\left(\dfrac{q}{r}e^{-mr}\right) = -4\pi q \delta^3\left(r\right) e^{-mr} + \dfrac{d}{dr}\left(\dfrac{-mq}{r}e^{-mr}\right)$
+\\
+\\
+The exponential in the first term evaluates to 1 because of the delta function.  The end result is 
+$= -4\pi q \delta^3\left(r\right) + \dfrac{m^2q}{r}e^{-mr}$
+\\
+\\
+So, 
+\\
+\\
+$\nabla^2\left(\dfrac{q}{r}e^{-mr}\right) - m^2\dfrac{q}{r}e^-{mr} = -4\pi q \delta^3\left(r\right)$
+\\
+\\
+\\textbf{A More Complete Solution}
+\\
+But, where did the q above come from?  For that matter, where did the solution come from?  Sure, it was a 'clever ansatz', but could it be constructued in and of itself.  Yup!  Here goes.
+\\
+\\
+First, write down the first term of the differential equation more completely and far more correctly as 
+\\
+\\
+$\nabla^2\phi = \dfrac{1}{r^2}\dfrac{\partial}{\partial r} \left(r^2\dfrac{\partial\phi}{\partial r}\right)$
+\\
+\\
+There are other terms to $\nabla^2$ in spherical coordinates, but because of our spherical symmetry, they don't matter.  We re-write the above as 
+\\
+\\
+$\nabla^2\phi = \dfrac{1}{r}\dfrac{\partial^2}{\partial r^2} \left(r\phi\right)$
+\\
+\\
+Now, we can multiply the whole thing thorugh by r to get 
+\\
+\\
+$\dfrac{d^2}{d r^2}\left(r\phi\right) - mr\phi = 0$
+\\
+\\
+or
+\\
+\\
+$\dfrac{d^2}{d r^2}\psi- mr\psi = 0$
+\\
+\\
+The solution that fits the bill is 
+\\
+\\
+$\psi \sim Ce^{\pm mr}$
+\\
+\\
+When we remember that we multiplied through by r in the first place, we can take the r back out to get 
+\\
+\\
+$\phi \sim \dfrac{C}{r}e^{\pm mr}$
+\\
+\\
+And now, we need to get the $C$ to be $q$.  Retrning back to electrosttics, we have
+\\
+\\
+$\nabla^2\phi = -4\pi\rho$
+\\
+\\
+but, it's equal to 0 away from the actual charge
+\\
+\\
+$\nabla^2\phi = 0$
+\\
+\\
+This solution is simlar in that 
+\\
+\\
+$\phi = \dfrac{C}{r}$
+\\
+\\
+To figure out the value of $C$ we start taking integrals
+\\
+\\
+$\int_V \nabla^2 \phi d^3x = \int_S \vec{\nabla}\phi\cdot d\vec{S} = -C\int_S \dfrac{\vec{r}}{r^3}\cdot d\vec{S} = -C\int_S \dfrac{\vec{n}}{r^2}\cdot d\vec{S}$
+\\
+\\
+$\vec{n}\cdot d\vec{S} = sin\theta d\theta\phi r^2$
+\\
+\\
+Which with spherical symmetry works out to $-C4\pi$
+\\
+\\
+Now, we integrate the source charge density which is just a point charge at the origin
+\\
+\\
+$\int_V -4\pi q \delta^2\left(\vec{r}\right) = -4\pi q$
+\\
+\\
+so, $c = q$.
+\\
+\\
+Since we've solved our equation of motion for the Proca equation everywhere but the origin above, we only need to look at the origin now.  At the origin, $e^{mr} = 1$ and it falls away leaving us with the same arguments as the electrostatic case and the same conculsion $C = q$.
+\\
+\\
+\\
+\\
+\\
+\\
+\textbf{Question}
+\\
+Does the mass correspond to the particle or the field?  I think it's the field.  Do we need to be able to solve the differential equation independently?  If so, how?
+\\
+\PRLsep
+\\
+\\
+\\
+\\
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
