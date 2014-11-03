@@ -75,19 +75,33 @@ This one seems perhaps too simple.  By applying $\vec{\nabla} \times \vec{A} = \
 $\vec{\nabla} \times \vec{A} = \vec{\nabla} \times \vec{v}\phi$
 \\
 \\
-Figure out how to apply the product rule and proceed from there
+We know from identities that 
 \\
 \\
-$= $
+$\vec{\nabla} \times \vec{v}\phi = \phi \vec{\nabla}\times\vec{v} + \vec{nabla}\phi\times\vec{v}$
 \\
 \\
-
+The first term is zero since $\vec{v}$ is constant.  Remembering that $\nabla\phi = \vec{E}$, we're left with 
+\\
+\\
+$\vec{B} = \vec{E} \times \vec{v}$
+\\
+\\
 \PRLsep
 \\
 \newpage
 \textbf{1.b.}
 \\
 This looks a bit like a mess for the moment.  Using the detailed expression for$\phi$ and $\vec{A}$ in 1.a., we're supposed to calculate the E field $\vec{E} = -\vec{\nabla}\phi - \partial\vec{A}/\partial t$ and show that it agrees with the expression derived in the lectures.
+\\
+\\
+First, substitute in the detailed expressions
+\\
+\\
+$\vec{E} = -\vec{\nabla}\dfrac{e\gamma}{r^\prime} - \partial\left(\vec{v}\phi\right)/\partial t$
+\\
+\\
+Now, see the attached sheets starting on the next page
 \\
 \\
 \PRLsep
@@ -159,7 +173,34 @@ $M^{\mu\nu}$ is the angular four-momentum defined in the lectures.
 If we split $M^{\mu\nu}$ into a $3+1$ representation, we get for the $ij$ components:
 \\
 \\
-$M^{ij} = \int_{t=const} \left(x^i T^{j\rho} - x^j T^{i\rho}\right)d\Sigma_\rho = \int_{t=const} \left(x^i T^{j0} - x^j T^{i0}\right)d^3 x =\int_{t=const} \left(x^i S^j - x^j S^i\right)d^3 x$
+$M^{ij} = \int_{t=const} \left(x^i T^{j\rho} - x^j T^{i\rho}\right)d\Sigma_\rho = \int_{t=const} \left(x^i T^{j0} - x^j T^{i0}\right)d^3 x =\int \left(x^i S^j - x^j S^i\right)d^3 x$
+\\
+\\
+We're supposed to show that 
+\\
+\\
+$\vec{L} = \dfrac{1}{4\pi}\int\vec{r}\times\left(\vec{E}\times\vec{B}\right)d^3 x$
+\\
+\\
+Since we know that
+\\
+\\
+$\vec{S} = \dfrac{\vec{E}\times\vec{B}}{4\pi}$,
+\\
+\\
+we're most of the way there.  Re-writing the above 3-space notation for $M^{ij}$ in index notation, we have 
+\\
+\\
+$M^{ij} = \int \epsilon_{ijk}x^j S^k d^3 x$.
+\\
+\\
+Combining all the above gives
+\\
+\\
+$\vec{L} = \dfrac{1}{4\pi}\int\vec{r}\times\left(\vec{E}\times\vec{B}\right)d^3 x$
+\\
+\\
+We've arrived at the assigned result.  The index notation is becoming easier and far more intuitive.
 \\
 \\
 \PRLsep
@@ -167,8 +208,49 @@ $M^{ij} = \int_{t=const} \left(x^i T^{j\rho} - x^j T^{i\rho}\right)d\Sigma_\rho 
 \textbf{3.b.}
 \\
 \\
-For this part, we're given the following
+If the fields die off appropriately at infinity and there are no source, $J^\mu = 0$, we're to further show that $\vec{L}$ can be written as 
 \\
+\\
+All of the following is taken from equations 6.93 through 6.95 of the notes and expanded as necessary
+\\
+\\
+$\vec{L} = \dfrac{1}{4\pi}\int\left[ \vec{E} \times \vec{A} + E_i \left(\vec{r} \times \vec{\nabla}\right)A_i \right]d^3x$
+\\
+\\
+Using the $\vec{B}$ from our result in 3.a., we can write down 
+\\
+\\
+$\left[\vec{r}\times\left(\vec{E}\times\vec{B}\right)\right]_i = \epsilon_{ijk}\epsilon_{klm}x_j E_l B_m$
+\\
+\\
+$= \epsilon_{ijk}\epsilon_{klm}\epsilon_{mpq} x_j E_l \partial_p A_q$
+\\
+\\
+$= \epsilon_{ijk}\left(\delta_{kp}\delta_{lq} - \delta_{kq}\delta_{lp}\right) x_j E_l \partial_p A_q$
+\\
+\\
+$= \epsilon_{ijk} x_j E_l \partial_k A_l - \epsilon_{ijk} x_j E_l \partial_l A_k$
+\\
+\\
+Plugging this into the expression for $\vec{L}$ produces
+\\
+\\
+$L_i = \int \left(\epsilon_{ijk} x_j E_l \partial_k A_l - \epsilon_{ijk} x_j E_l \partial_l A_k\right) d^3x$
+\\
+\\
+$L_i = \int \left(-\epsilon_{ijk} \partial_k \left(x_j E_l\right) A_l + \partial_l\left( x_j E_l\right) A_k\right) d^3x$
+\\
+\\
+$L_i = \int \left(-\epsilon_{ijk} x_j \left(\partial_k E_l\right) A_l + \epsilon_{ijk}\partial_l E_j A_k\right) d^3x$
+\\
+\\
+Reversing the two terms in the last integrand and re-writing in vector notation gives the (almost) desired result of
+\\
+\\
+$L_i = \int \left(\left(\vec{E} \times \vec{A}\right) - A_i \left(\vec{r}\times\vec{\nabla}\right) E_i\right) d^3x$
+\\
+\\
+Keep in mind that the final minus sign flip is probably from swapping the indices of the E and A tensors surrounding the partial in the penultimate expression
 \\
 \\
 \PRLsep
