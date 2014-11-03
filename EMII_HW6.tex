@@ -1,0 +1,233 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Homework VI Due 2014/11/03}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+Link to the homework that's inspiring the notes below {\url http://people.physics.tamu.edu/pope/EM611/Prob14/prob6.pdf}
+\\
+\\
+This version will just be notes on how to proceed when traction is gained.
+\\
+\\
+\textbf{1.a.}
+\\
+This one seems perhaps too simple.  By applying $\vec{\nabla} \times \vec{A} = \vec{B}$ we arrive quickly at 
+\\
+\\
+$\vec{\nabla} \times \vec{A} = \vec{\nabla} \times \vec{v}\phi$
+\\
+\\
+Figure out how to apply the product rule and proceed from there
+\\
+\\
+$= $
+\\
+\\
+
+\PRLsep
+\\
+\newpage
+\textbf{1.b.}
+\\
+This looks a bit like a mess for the moment.  Using the detailed expression for$\phi$ and $\vec{A}$ in 1.a., we're supposed to calculate the E field $\vec{E} = -\vec{\nabla}\phi - \partial\vec{A}/\partial t$ and show that it agrees with the expression derived in the lectures.
+\\
+\\
+\PRLsep
+\\
+\newpage
+\textbf{2}
+\\
+This one seems blindingly simple.  We are to:
+\\
+\\
+Consider the epxresion for the electric field due to a charge e moving with uniforma velocity $\vec{v}$, as derived in the lectures.  Evaluate the surface integral 
+\\
+\\
+$\int_S \vec{E}\cdot d\vec{S}$
+\\
+\\
+over a spherical surface that encloses the moving charge.
+\\
+\\
+If we have any hope of maintaining charge conservation, it would seem the answer must be, from Gauss' Law,
+\\
+\\
+$-4 \pi\;e$
+\\
+\\
+That is the answer, but we have to setup and evaluate the integral anyway.  It's sort of cool in the end that it all works out, because it certainly looks at first blush like it won't.  First, write down the expression for the squished E-field in a moving frame.
+\\
+\\
+$\vec{E} = \dfrac{e\vec{R}}{R^3}\dfrac{1-v^2}{\left(1-v^2sin^2\theta\right)^{3/2}}$
+\\
+\\
+Muck with a the power of the denominator to make it more palletable.
+\\
+\\
+$\vec{E} = \dfrac{e\hat{r}}{R^2}\dfrac{1-v^2}{\left(1-v^2sin^2\theta\right)^{3/2}}$
+\\
+\\
+Write the integral again with the spherical element of surface area.
+\\
+\\
+$\int \dfrac{e\hat{r}}{R^2}\dfrac{1-v^2}{\left(1-v^2sin^2\theta\right)^{3/2}} R^2 d\theta sin \theta d\phi$
+\\
+\\
+Cancelling and rearranging leaves the following integral to be evaluated
+\\
+\\
+$e\hat{r}2 \pi\int sin \theta\dfrac{1-v^2}{\left(1-v^2sin^2\theta\right)^{3/2}} d\theta$
+\\
+\\
+The integral evalues, (via Mathematica), to 2 under the condition that $v < 1$, which it is since we're restricted to less than light speed, and we're done.  The electric field is equal to $4\pi e$ as expected.
+\\
+\PRLsep
+\newpage
+\textbf{3.a.}
+\\
+\\
+We're given the following
+\\
+\\
+$L_i = \dfrac{1}{2}\epsilon_{ijk}M_{jk}$
+\\
+\\
+$M^{\mu\nu} = \int \left(x^\mu T^{\nu\rho} - x^\nu T^{\mu\rho}\right)d\Sigma_\rho$
+\\
+\\
+$M^{\mu\nu}$ is the angular four-momentum defined in the lectures.
+\\
+\\
+If we split $M^{\mu\nu}$ into a $3+1$ representation, we get for the $ij$ components:
+\\
+\\
+$M^{ij} = \int_{t=const} \left(x^i T^{j\rho} - x^j T^{i\rho}\right)d\Sigma_\rho = \int_{t=const} \left(x^i T^{j0} - x^j T^{i0}\right)d^3 x =\int_{t=const} \left(x^i S^j - x^j S^i\right)d^3 x$
+\\
+\\
+\PRLsep
+\newpage
+\textbf{3.b.}
+\\
+\\
+For this part, we're given the following
+\\
+\\
+\\
+\PRLsep
+\\
+\\
+\\
+\\
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
