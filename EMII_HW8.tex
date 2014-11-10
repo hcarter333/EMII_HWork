@@ -1,0 +1,203 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{EMII Homework VIII Due 2014/11/19}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+Link to the homework that's inspiring the notes below 
+\\
+\\
+{\url http://people.physics.tamu.edu/pope/EM611/Prob14/prob8.pdf}
+\\
+\\
+\textbf{1.a.}
+\\
+Find the TE solutions for a rectangular waveguide as shown in class.  For TE modes, we have the following
+\\
+\\
+$E_z = 0$, $\dfrac{\partial B_z}{\partial n} = 0$ on the surface of the waveguide, and 
+\\
+\\
+$\partial^2 B_z = \Omega^2 B_z = 0$
+\\
+\\
+denote $B_z = \psi$
+\\
+\\
+We know that 
+\\
+\\
+$\dfrac{\partial \psi}{\partial n} = 0$ at $x = 0$ and $x = a$ as well as at $y = 0$ and $y = b$
+\\
+\\
+From the class notes, we know that we want $X\left(x\right) \sim sin$ or $X\left(x\right) \sim cos$.  Since we want the deriviative of our function to be 0 at the boundary, we'll select $cos$.  The same reasoning holds for $Y\left(y\right)$
+\\
+\\
+$X\left(x\right) \sim cos\left(\alpha x\right)$,  $Y\left(y\right) \sim cos\left(\alpha x\right)$
+\\
+\\
+Just as in the TM mode, we get
+\\
+\\
+$\alpha = \dfrac{m\pi}{a}$ and $\beta = \dfrac{n\pi}{b}$.
+\\
+\\
+The final solution is 
+$\psi_{mn} \sim cos\left(\dfrac{m\pi x}{a}\right)cos\left(\dfrac{n\pi x}{b}\right)$
+\\
+\\
+also, just like the class notes
+\\
+\\
+$\Omega^2_{mn} = \dfrac{m^2\pi^2}{a^2} + \dfrac{n^2\pi^2}{b^2}$
+\\
+\\
+\textbf{1.b.}
+\\
+\\
+Notice, that for the TE solutions, either $a$ or $b$ can be equal to zero and still maintain a non-trivial solution unlike in the TM case where neither $a$ or $b$ could be 0.  This gives us a slightly different expression for the minimum frequency 
+\\
+\\
+$\omega_{minTE} = \sqrt{\dfrac{\pi^2}{a^2}}$
+\\
+\\
+for the ratio of TE to TM cutoff frequencies, we have
+\\
+\\
+$\dfrac{\omega_{minTE}}{\omega_{minTM}} = \dfrac{\pi/a}{\sqrt{\dfrac{\pi^2}{a^2} + \dfrac{\pi^2}{b^2}}}$
+\\
+\\
+\PRLsep
+\\
+\newpage
+\textbf{2}
+\\
+\\
+For this problem, we'll frame the TE and TM solutions in terms of eigenfunctions and eigen values like:
+\\
+\\
+TE:
+\\
+\\
+$\partial_\perp^2 \psi = -\Omega^2 \psi$
+\\
+\\
+\\
+\\
+\\
+\\
+\PRLsep
+\\
+\\
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
