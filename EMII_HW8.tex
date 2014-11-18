@@ -127,25 +127,124 @@ $\dfrac{\omega_{minTE}}{\omega_{minTM}} = \dfrac{\pi/a}{\sqrt{\dfrac{\pi^2}{a^2}
 \PRLsep
 \\
 \newpage
-\textbf{2}
+\textbf{2.a.}
+\\
+\\
+Find the TM mode solutions for a triangular waveguide with both of the short sides having length $a$.
 \\
 \\
 For this problem, we'll frame the TE and TM solutions in terms of eigenfunctions and eigen values like:
 \\
 \\
-TE:
-\\
-\\
 $\partial_\perp^2 \psi = -\Omega^2 \psi$
 \\
 \\
+We can add eignfunctions to arrive at additional eigenfunctions.  To meet the boundary conditions specified in this problem, we should use an eigenfunction sum like:
 \\
 \\
+$E_{nm} = E_{nm}\left(x,y\right) - E_{nm}\left(y,x\right)$
+\\
+\\
+It can be easily seen that when the x and y values are equal, along the diagonal wall of the waveguide, the electric field goes to zero meeting the boundary conditions.
 \\
 \\
 \PRLsep
 \\
+\newpage
+\textbf{2.b.}
 \\
+\\
+With different wall sizes, we'll go back to the generic solution with different denominators, $a$, and $b$, for the $X\left(x\right)$ and the $Y\left(y\right)$ solutions.  This will make our choice of solution above impossible because by switching the x and y coordates, we'll spoil the 0 $\vec{E}$ field on the horizontal and vertical walls.  
+\\
+\\
+Put another way, we'll break the symmetry that allowed the above solution.
+\\
+\\
+Need to add mathematical verbage to show that there is no combination of solutions of the form 
+\\
+\\
+$E = E_0 sin\left(\dfrac{m\pi}{a}\right)sin\left(\dfrac{n\pi}{b}\right)$
+\\
+\\
+that can sum to zero.
+\\
+\\
+First, write down the required sum
+\\
+\\
+$E_0 sin\left(\dfrac{m\pi x}{a}\right)sin\left(\dfrac{n\pi y}{b}\right) + b_0E_0 sin\left(\dfrac{m\pi}{a}\right)sin\left(\dfrac{n\pi}{b}\right)$
+\\
+\\
+We can go ahead and set $y = bx$ to get
+\\
+\\
+$E_0 sin\left(\dfrac{m\pi x}{a}\right)sin\left(\dfrac{n\pi bx}{b}\right) + c_0 E_0 sin\left(\dfrac{m\pi bx}{a}\right)sin\left(\dfrac{n\pi bx}{b}\right) = 0$
+\\
+\\
+\PRLsep
+\\
+\newpage
+\textbf{2.c.}
+\\
+\\
+For the special caes where the vertical wall height, $b$ is equal to $\dfrac{a}{\sqrt{3}}$, show that the following solution will satisfy the boundary conditions.
+\\
+\\
+$E_{lmn} = sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right)\pi y}{a\sqrt{3}} + sin\dfrac{m\pi x}{a} sin\dfrac{\left(n-l\right)\pi y}{a\sqrt{3}} + sin\dfrac{n\pi x}{a} sin\dfrac{\left(l-m\right)\pi y}{a\sqrt{3}}$,
+\\
+\\
+where $l = -m-n$.  
+\\
+\\
+Keep in mind that our eigenvalue equation is 
+\\
+\\
+$\nabla^2\psi = -\Omega^2 \psi$.
+\\
+\\
+First, find the eigenvalues of all three functions, then show that they are the same and that the sum of all three functions is in fact a valid eigenvalue function as described in 2.a.
+\\
+\\
+$\nabla^2 sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right) \pi y}{a \sqrt{3}}$
+\\
+\\
+$= -\left(\dfrac{l\pi}{a}\right)^2\left(sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right) \pi y}{a \sqrt{3}}\right)$
+\\
+\\
+from the x deriviatives and 
+\\
+\\
+$= -\left(\dfrac{\left(m-n\right)\pi}{3a^2}\right)^2\left(sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right) \pi y}{a \sqrt{3}}\right)$
+\\
+\\
+from the y derivatives.  Gives a total $\Omega_{mn}$ of 
+\\
+\\
+$\Omega_{mn}^2 = \dfrac{l^2 \pi^2}{a^2} + \dfrac{\left(\left(m-n\right)\pi\right)^2}{3a^2}$
+\\
+\\
+Expanding the above out in terms of $m$ and $n$ only gives
+\\
+\\
+$\Omega_{mn}^2 = \dfrac{4 \pi^2}{3a^2}\left(m^2 + mn + n^2\right)$
+\\
+\\
+The same operations fort the second two terms give the same results.  If time allows, they will be included below.
+\PRLsep
+\\
+\newpage
+\textbf{2.d.}
+For the special caes where the vertical wall height, $b$ is equal to $\dfrac{a}{\sqrt{3}}$, verify that the following functions are eigenfunctions, and determine the eignvalue $\Omega_{mn}$.
+\\
+\\
+$E_{lmn} = sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right)\pi y}{a\sqrt{3}} + sin\dfrac{m\pi x}{a} sin\dfrac{\left(n-l\right)\pi y}{a\sqrt{3}} + sin\dfrac{n\pi x}{a} sin\dfrac{\left(l-m\right)\pi y}{a\sqrt{3}}$,
+\\
+\\
+It's all about relfection.  The solution for the equilateral triangle is done in Schwinger and Milton (2006).  The basic idea is to go to trilinear coordinates, then find solutions that make the $\vec{E}$ field go to 0 on all three walls.  These solutions will be exponentials with imaginary arguments.  The next step is to write down the real part of these functions.  At this point, the result will fall out immediately because the sin functions will all evaluate to 0 at $x = 0$.  The one last --first?-- step I forgot to mention is to orient the waveguide so that its vertical wall is at $x = 0$ instead of at $x = a$.
+\\
+\\
+Here's the question, can we take the sin form we have now, write it as complex exponentials and immediately show the solution?
+
 
 % If your manuscript is conditionally accepted, the editors will ask you to
 % submit your editable LaTeX source file.  Before doing so, you should move
