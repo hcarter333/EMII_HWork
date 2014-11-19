@@ -234,17 +234,65 @@ The same operations fort the second two terms give the same results.  If time al
 \\
 \newpage
 \textbf{2.d.}
-For the special caes where the vertical wall height, $b$ is equal to $\dfrac{a}{\sqrt{3}}$, verify that the following functions are eigenfunctions, and determine the eignvalue $\Omega_{mn}$.
+For the special caes where the vertical wall height, $b$ is equal to $\dfrac{a}{\sqrt{3}}$, verify that the following functions satisfy the proper boundary functions on all three sides of the triangle $\Omega_{mn}$.
 \\
 \\
 $E_{lmn} = sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right)\pi y}{a\sqrt{3}} + sin\dfrac{m\pi x}{a} sin\dfrac{\left(n-l\right)\pi y}{a\sqrt{3}} + sin\dfrac{n\pi x}{a} sin\dfrac{\left(l-m\right)\pi y}{a\sqrt{3}}$,
 \\
 \\
+For the $x = 0$ and $y = 0$ walls of the waveguide, you can see by inspection that the above gives a vaule of zero for $E_{lmn}$
+\\
+\\
+The solution for the equilateral triangular wave guide can be shown to give the above solution for the 30, 60, 90 waveguide described in 2.c.  That only leaves us to show satisfaction of the boundary condition on the diagonal wall.
+\\
+\\
 It's all about relfection.  The solution for the equilateral triangle is done in Schwinger and Milton (2006).  The basic idea is to go to trilinear coordinates, then find solutions that make the $\vec{E}$ field go to 0 on all three walls.  These solutions will be exponentials with imaginary arguments.  The next step is to write down the real part of these functions.  At this point, the result will fall out immediately because the sin functions will all evaluate to 0 at $x = 0$.  The one last --first?-- step I forgot to mention is to orient the waveguide so that its vertical wall is at $x = 0$ instead of at $x = a$.
 \\
 \\
-Here's the question, can we take the sin form we have now, write it as complex exponentials and immediately show the solution?
-
+Here's the question, can we take the sin form we have now, write it as complex exponentials and immediately show the solution?  The answer is, not as far as I can tell
+\\
+\\
+However, if we let Mathemtica do the work there is a way to show that the diagnoal wall will have 0 field.  First, for $y$ substitute $x/\sqrt{3}$.  We then start from 
+\\
+\\
+$sin\dfrac{l\pi x}{a} sin\dfrac{\left(m-n\right)}{3a} + sin\dfrac{n}{a} sin{\left(l-m\right)\pi x}{3a} + sin\dfrac{m}{a} sin{\left(n-l\right)\pi x}{3a}$
+\\
+\\
+We'll drop the $\pi$ and $x$ from here on out since they're common to all terms.  
+\\
+\\
+\newpage
+Using the product rule, the three above terms expand to six cosine terms.
+\\
+\\
+$= \dfrac{1}{2}\left(cos\left(\dfrac{l}{a}-\dfrac{m-n}{3a}\right) - cos\left(\dfrac{l}{a}+\dfrac{m-n}{3a}\right)\right) + $
+\\
+$\dfrac{1}{2}\left(cos\left(\dfrac{l-m}{3a}-\dfrac{n}{a}\right) - cos\left(\dfrac{l-m}{3a}+\dfrac{n}{a}\right)\right) + $
+\\
+$\dfrac{1}{2}\left(cos\left(\dfrac{m}{a}-\dfrac{n-l}{3a}\right) - cos\left(\dfrac{m}{a}+\dfrac{n-l}{3a}\right)\right)$
+\\
+\\
+This can be rearranged to give
+\\
+\\
+$2\left(cos\left(\dfrac{l+2m}{3a}\right) - cos\left(\dfrac{l+2n}{3a}\right)\right)sin\left(\dfrac{l-m}{3a}\right)sin\left(\dfrac{l-n}{3a}\right)$
+\\
+\\
+Substituting in $l = -m-n$ we get
+\\
+\\
+$2\left(cos\left(\dfrac{m-n}{3a}\right) - cos\left(\dfrac{n-m}{3a}\right)\right)sin\left(\dfrac{-m-2n}{3a}\right)sin\left(\dfrac{-2m-n}{3a}\right)$
+\\
+\\
+Bearing in mindt that $cos$ is an even function, we can see that
+\\
+\\
+$cos\left(\dfrac{m-n}{3a}\right) = cos\left(\dfrac{n-m}{3a}\right)$
+\\
+\\
+consequently, the difference of cosines term in teh product above evaluates identically to zero for all x.  The value of $E_{lmn}$ on the diagonal wall is always 0.
+\\
+\\
 
 % If your manuscript is conditionally accepted, the editors will ask you to
 % submit your editable LaTeX source file.  Before doing so, you should move
